@@ -2,8 +2,17 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/epoll.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/http_tast.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/myerr.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/epoll.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threadpool.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/http_tast.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/myerr.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/util.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/util.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

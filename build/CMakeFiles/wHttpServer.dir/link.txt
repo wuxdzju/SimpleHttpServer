@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11   CMakeFiles/wHttpServer.dir/main.cpp.o CMakeFiles/wHttpServer.dir/epoll.cpp.o CMakeFiles/wHttpServer.dir/http_tast.cpp.o CMakeFiles/wHttpServer.dir/myerr.cpp.o CMakeFiles/wHttpServer.dir/util.cpp.o  -o wHttpServer -lpthread 

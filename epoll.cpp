@@ -21,13 +21,14 @@ int addfd(int efd,int fd,bool one_shot){
     setnoblock(fd);
     epoll_event event;
     event.data.fd=fd;
-    event.events=EPOLLIN | EPOLLET | EPOLLERR;
+    //event.events=EPOLLIN | EPOLLET | EPOLLERR;
+    event.events=EPOLLIN |  EPOLLERR;
     if(one_shot){
         event.events |= EPOLLONESHOT;
     }
     int ret=epoll_ctl(efd,EPOLL_CTL_ADD,fd,&event);
     if(ret==-1){
-        err_ret("addfd:epoll_ctl err:");
+        err_dump("addfd:epoll_ctl err:");
         return -1;
     }
 
@@ -45,7 +46,8 @@ int removefd(int efd,int fd){
 int modifyfd(int efd,int fd,int ev){
     epoll_event event;
     event.data.fd=fd;
-    event.events=ev | EPOLLET | EPOLLONESHOT | EPOLLRDHUP;
+    //event.events=ev | EPOLLET | EPOLLONESHOT | EPOLLRDHUP;
+    event.events=ev | EPOLLONESHOT | EPOLLRDHUP;
     int ret=epoll_ctl(efd,EPOLL_CTL_MOD,fd,&event);
     if(ret==-1){
         err_ret("modifyfd:epoll_ctl err:");
