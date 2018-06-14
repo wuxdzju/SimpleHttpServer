@@ -1,2 +1,0 @@
-#ifndef timer.h
-
