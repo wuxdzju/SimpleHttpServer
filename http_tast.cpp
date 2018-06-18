@@ -116,7 +116,7 @@ bool http_tast::read_buf() {//循环读数据到读数据缓冲区，直到无�
     while(true){
         read_bytes=recv(m_sockfd,m_read_buf+m_read_index,READ_BUF_SIZE-m_read_index,0);
         if(read_bytes==-1){
-            if(errno==EAGAIN || errno==EWOULDBLOCK){
+            if(errno==EAGAIN ){
                 break;
             }
             return false;
