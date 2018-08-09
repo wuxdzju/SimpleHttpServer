@@ -5,6 +5,7 @@
 #include "assert.h"
 #include "EventLoop.h"
 
+
 #include <unistd.h>
 #include <functional>
 #include <iostream>
@@ -71,7 +72,7 @@ void Connection::handRead(TimeUnit recieveTime)
 void Connection::handClose()
 {
     _loop->assertInLoopThread();
-    assert(_connState==D_CONNECTED);
+    assert(_connState==D_CONNECTED || _connState==D_DISCONNECTING);
 
     //在这里并不急于关闭文件描述符，只是禁止该文件描述符上所有的事件，等到析构时，再关闭
     _channel->disableAllEvent();
@@ -89,7 +90,7 @@ void Connection::handError()
 void Connection::connectionDestroyed()
 {
     _loop->assertInLoopThread();
-    assert(_connState==D_CONNECTED);
+    assert(_connState==D_CONNECTED || _connState==D_DISCONNECTING);
 
     setConnState(D_DISCONNECTED);
     _channel->disableAllEvent();
@@ -98,7 +99,103 @@ void Connection::connectionDestroyed()
     _loop->removeChannel(_channel.get());
 }
 
+
+void Connection::shutdown()
+{
+    if(_connState==D_CONNECTED)
+    {
+        setConnState(D_DISCONNECTING);
+        _loop->runInLoopThread(std::bind(&Connection::shutdownInLoop,this));
+    }
+}
+
+void Connection::shutdownInLoop()
+{
+    _loop->assertInLoopThread();
+    if(!_channel->isWriting())
+    {
+        //当不在写的时候，才进行关闭
+        _socket->shutdownWrite();
+    }
+}
+
+void Connection::send(const std::string &message)
+{
+    if(_connState==D_CONNECTED)
+    {
+        if(_loop->isInLoopThread())
+        {
+            sendInLoop(message);
+        }
+        else
+        {
+            _loop->runInLoopThread(std::bind(&Connection::sendInLoop,this,message));
+        }
+    }
+}
+
+void Connection::sendInLoop(const std::string &message)
+{
+    _loop->assertInLoopThread();
+    ssize_t nwrote=0;
+
+    if(!_channel->isWriting() && _outputBuffer.readableBytes()==0)
+    {
+        nwrote=::write(_channel->fd(),message.data(),message.size());
+
+        if(nwrote<0)
+        {
+            nwrote=0;
+            if(errno!=EWOULDBLOCK)
+            {
+                perror("Connection::sendInLoop():");
+            }
+        }
+
+        assert(nwrote>=0);
+        //如果一次没有将数据发送完，则将剩余数据添加到_outBuffer中，并并注册读事件
+        if(static_cast<size_t >(nwrote)<message.size())
+        {
+            _outputBuffer.append(message.data()+nwrote,message.size()-nwrote);
+            if(!_channel->isWriting())
+            {
+                _channel->enableWriting();
+            }
+        }
+    }
+}
+
+
 void Connection::handWrite()
 {
+    _loop->assertInLoopThread();
+    if(_channel->isWriting())
+    {
+        ssize_t nwrote=::write(_channel->fd(),_outputBuffer.peek(),_outputBuffer.readableBytes());
 
+        if(nwrote>0)
+        {
+            _outputBuffer.retrieve(nwrote);
+            if(_outputBuffer.readableBytes()==0)
+            {
+                _channel->disableWriting();
+                if(_connState==D_DISCONNECTING)
+                {
+                    shutdownInLoop();
+                }
+            }
+            else
+            {
+                printf("i am going to write more data");
+            }
+        }
+        else
+        {
+            perror("Connection::handWrite():");
+        }
+    }
+    else
+    {
+        printf("Connection is down,no more writing");
+    }
 }

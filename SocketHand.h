@@ -52,7 +52,7 @@ namespace SocketHand
     //通过sockfd获取本地地址
     struct sockaddr_in getLocalAddr(int sockfd);
 
-
+    void shutdownWrite(int sockfd);
 }
 
 

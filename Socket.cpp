@@ -42,3 +42,8 @@ void Socket::setReusePort(bool on)
     int opval=on?1:0;
     ::setsockopt(_sockfd,SOL_SOCKET,SO_REUSEADDR,&opval,sizeof(opval));
 }
+
+void Socket::shutdownWrite()
+{
+    SocketHand::shutdownWrite(_sockfd);
+}

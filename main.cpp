@@ -404,6 +404,50 @@ void test_connection2()
     loop.loop();
 }
 
+std::string message1;
+std::string message2;
+
+void onConnection2(const ConnectionPtr& conn)
+{
+    if(conn->Connected())
+    {
+        printf("OnConnection():new connection [%s] from %s\n",
+               conn->getName().c_str(),
+               conn->getPeerAddr().toHostPort().c_str());
+        conn->send(message1);
+        conn->send(message2);
+        conn->shutdown();
+    }
+    else
+    {
+        printf("onConnection():connection [%s] is down\n",
+                    conn->getName().c_str());
+    }
+}
+
+void test10()
+{
+    printf("main():tid= %d\n",CurrentThread::tid());
+
+    int len1=10000;
+    int len2=200;
+
+    message1.resize(len1);
+    message2.resize(len2);
+    std::fill(message1.begin(),message1.end(),'A');
+    std::fill(message2.begin(),message2.end(),'B');
+
+    InetAddr listenAddr(9982);
+    EventLoop loop;
+
+    Server server(&loop,listenAddr);
+    server.setConnectionCallBack(onConnection2);
+    server.setMessageCallBack(OnMessage2);
+    server.start();
+
+    loop.loop();
+}
+
 int main()
 {
     //test_timeunit();
@@ -416,5 +460,6 @@ int main()
     //test_acceptor();
     //test_connection();
     //test3_3();
-    test_connection2();
+    //test_connection2();
+    test10();
 }

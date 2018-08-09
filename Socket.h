@@ -30,6 +30,8 @@ public:
 
     void setReusePort(bool on);
 
+    void shutdownWrite();
+
 private:
     const int _sockfd;
 };

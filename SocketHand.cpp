@@ -158,3 +158,11 @@ struct sockaddr_in SocketHand::getLocalAddr(int sockfd)
     }
     return localaddr;
 }
+
+void SocketHand::shutdownWrite(int sockfd)
+{
+    if(::shutdown(sockfd,SHUT_WR)<0)
+    {
+        perror("SocketHand::shutdownWrite():");
+    }
+}

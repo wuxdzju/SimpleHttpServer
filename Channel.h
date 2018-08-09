@@ -73,6 +73,23 @@ public:
         _events|=D_ReadEvent;
         update();
     }
+
+    void enableWriting()
+    {
+        _events|=D_WriteEvent;
+        update();
+    }
+
+    void disableWriting()
+    {
+        _events &=~D_WriteEvent;
+        update();
+    }
+
+    bool isWriting() const
+    {
+        return _events & D_WriteEvent;
+    }
     
     void disableAllEvent()
     {
@@ -97,9 +114,10 @@ public:
 
 
 
-
 private:
     void update();//该函数会调用Eventloop中的updateChannel函数，进而调用Poller中的updateChannel函数，最终的作用时更新Poller中该Channel对应的数据
+
+
 
     static const int D_NoneEvent;
     static const int D_ReadEvent;

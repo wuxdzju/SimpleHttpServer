@@ -3,6 +3,8 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="wHttpServer" targetName="wHttpServer" />
+      <config projectName="doker" targetName="doker" />
+      <config projectName="sumer" targetName="sumer" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -12,7 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eb06008-78d0-4fb7-90c9-61cb557994bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wHttpServer.iml" afterPath="$PROJECT_DIR$/.idea/wHttpServer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Channel.h" afterPath="$PROJECT_DIR$/Channel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Connection.cpp" afterPath="$PROJECT_DIR$/Connection.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Connection.h" afterPath="$PROJECT_DIR$/Connection.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Socket.cpp" afterPath="$PROJECT_DIR$/Socket.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Socket.h" afterPath="$PROJECT_DIR$/Socket.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SocketHand.cpp" afterPath="$PROJECT_DIR$/SocketHand.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SocketHand.h" afterPath="$PROJECT_DIR$/SocketHand.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="wHttpServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,110 +44,149 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="http_tast.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http_tast.cpp">
+      <file leaf-file-name="Connection.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Connection.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6318">
-              <caret line="351" column="25" selection-start-line="351" selection-start-column="25" selection-end-line="351" selection-end-column="25" />
+            <state relative-caret-position="1746">
+              <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
               <folding>
-                <element signature="e#3242#4545#0" expanded="false" />
-                <element signature="e#4547#5293#0" expanded="false" />
-                <element signature="e#5295#6260#0" expanded="false" />
-                <element signature="e#6262#6485#0" expanded="false" />
-                <element signature="e#6487#7349#0" expanded="false" />
-                <element signature="e#7351#7884#0" expanded="false" />
+                <marker date="1533739939740" expanded="true" signature="350:2207" ph="{...}" />
+                <marker date="1533739939740" expanded="true" signature="916:955" ph="{...}" />
+                <marker date="1533739939740" expanded="true" signature="1016:1052" ph="{...}" />
+                <marker date="1533739939740" expanded="true" signature="1109:1143" ph="{...}" />
+                <marker date="1533739939740" expanded="true" signature="1417:1515" ph="{...}" />
+                <marker date="1533739939740" expanded="true" signature="1558:1587" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http_tast.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http_tast.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="epoll.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/epoll.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="epoll.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/epoll.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+            <state relative-caret-position="2971">
+              <caret line="345" column="21" selection-start-line="345" selection-start-column="21" selection-end-line="345" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CallBack.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/base/CallBack.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Connection.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2340">
+              <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1533739939916" expanded="true" signature="670:999" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="1027:1031" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="1071:1253" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="1303:1609" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="1640:1914" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="1945:2032" ph="{...}" />
+                <marker date="1533739939916" expanded="true" signature="2073:2333" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadpool.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/threadpool.h">
+      <file leaf-file-name="Socket.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Socket.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="793">
-              <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="576">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+              <folding>
+                <marker date="1533739939688" expanded="true" signature="113:505" ph="{...}" />
+                <marker date="1533739939688" expanded="true" signature="188:196" ph="{...}" />
+                <marker date="1533739939688" expanded="true" signature="237:268" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.cpp">
+      <file leaf-file-name="Socket.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Socket.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="522">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <marker date="1533739939968" expanded="true" signature="84:161" ph="{...}" />
+                <marker date="1533739939968" expanded="true" signature="213:276" ph="{...}" />
+                <marker date="1533739939968" expanded="true" signature="300:341" ph="{...}" />
+                <marker date="1533739939968" expanded="true" signature="386:592" ph="{...}" />
+                <marker date="1533739939968" expanded="true" signature="629:726" ph="{...}" />
+                <marker date="1533739939968" expanded="true" signature="763:860" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myerr.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myerr.h">
+      <file leaf-file-name="SocketHand.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SocketHand.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="2898">
+              <caret line="161" column="36" selection-start-line="161" selection-start-column="36" selection-end-line="161" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1533739940032" expanded="true" signature="190:260" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="330:388" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="440:469" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="519:547" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="599:628" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="679:707" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="765:1023" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="1066:1291" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="1331:1516" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="1588:1742" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="1785:1918" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="1985:2541" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="2580:2680" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="2774:2961" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="3053:3242" ph="{...}" />
+                <marker date="1533739940032" expanded="true" signature="3301:3569" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.h">
+      <file leaf-file-name="SocketHand.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SocketHand.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="828">
+              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+              <folding>
+                <marker date="1533739940068" expanded="true" signature="202:1189" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myerr.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myerr.cpp">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="126">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -164,11 +215,18 @@
         <option value="$PROJECT_DIR$/util.cpp" />
         <option value="$PROJECT_DIR$/http_parse.cpp" />
         <option value="$PROJECT_DIR$/http_tast.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/http_tast.cpp" />
         <option value="$PROJECT_DIR$/epoll.cpp" />
         <option value="$PROJECT_DIR$/timer.h" />
+        <option value="$PROJECT_DIR$/Channel.h" />
+        <option value="$PROJECT_DIR$/SocketHand.cpp" />
+        <option value="$PROJECT_DIR$/SocketHand.h" />
+        <option value="$PROJECT_DIR$/Socket.h" />
+        <option value="$PROJECT_DIR$/Socket.cpp" />
+        <option value="$PROJECT_DIR$/Connection.h" />
+        <option value="$PROJECT_DIR$/Connection.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -214,21 +272,31 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wHttpServer" />
+              <option name="myItemId" value="sumer" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wHttpServer" />
+              <option name="myItemId" value="sumer" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wHttpServer" />
+              <option name="myItemId" value="sumer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sumer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sumer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,7 +308,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../youshuang_project/15copy" />
   </component>
-  <component name="RunManager" selected="Application.wHttpServer">
+  <component name="RunManager" selected="Application.sumer">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="wHttpServer" TARGET_NAME="wHttpServer" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
@@ -410,9 +478,19 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="doker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="doker" TARGET_NAME="doker" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="doker" RUN_TARGET_NAME="doker">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sumer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sumer" TARGET_NAME="sumer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sumer" RUN_TARGET_NAME="sumer">
+      <envs />
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.wHttpServer" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="2" class="java.lang.String" itemvalue="Application.doker" />
+      <item index="3" class="java.lang.String" itemvalue="Application.sumer" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -433,11 +511,13 @@
       <workItem from="1528964075303" duration="924000" />
       <workItem from="1529748790226" duration="1196000" />
       <workItem from="1529850049471" duration="1838000" />
+      <workItem from="1533733989345" duration="6046000" />
+      <workItem from="1533796716426" duration="1416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81061000" />
+    <option name="totallyTimeSpent" value="88523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -488,150 +568,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myerr.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_tast.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_tast.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3242#4545#0" expanded="false" />
-            <element signature="e#4547#5293#0" expanded="false" />
-            <element signature="e#5295#6260#0" expanded="false" />
-            <element signature="e#6262#6485#0" expanded="false" />
-            <element signature="e#6487#7349#0" expanded="false" />
-            <element signature="e#7351#7884#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epoll.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epoll.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_parse.h" />
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_parse.cpp" />
-    <entry file="file://$PROJECT_DIR$/threadpool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_tast.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/http_tast.h" />
     <entry file="file://$PROJECT_DIR$/http_parse.h" />
     <entry file="file://$PROJECT_DIR$/http_parse.cpp" />
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lock.h" />
-    <entry file="file://$PROJECT_DIR$/threadpool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myerr.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myerr.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/threadpool.h" />
+    <entry file="file://$PROJECT_DIR$/util.h" />
+    <entry file="file://$PROJECT_DIR$/myerr.h" />
+    <entry file="file://$PROJECT_DIR$/myerr.cpp" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -643,22 +595,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.h" />
     <entry file="file://$PROJECT_DIR$/lock.h" />
-    <entry file="file://$PROJECT_DIR$/threadpool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/threadpool.h" />
     <entry file="file://$PROJECT_DIR$/threadpool1.h" />
     <entry file="file://$PROJECT_DIR$/test.h" />
     <entry file="file://$PROJECT_DIR$/error.cpp" />
@@ -693,102 +636,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/http_parse.cpp" />
     <entry file="file://$PROJECT_DIR$/http_parse.h" />
-    <entry file="file://$PROJECT_DIR$/myerr.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/myerr.h" />
+    <entry file="file://$PROJECT_DIR$/util.h" />
     <entry file="file://$PROJECT_DIR$/timer.h" />
     <entry file="file://$PROJECT_DIR$/lock.h" />
-    <entry file="file://$PROJECT_DIR$/http_tast.h">
+    <entry file="file://$PROJECT_DIR$/http_tast.h" />
+    <entry file="file://$PROJECT_DIR$/myerr.cpp" />
+    <entry file="file://$PROJECT_DIR$/http_tast.cpp" />
+    <entry file="file://$PROJECT_DIR$/epoll.cpp" />
+    <entry file="file://$PROJECT_DIR$/epoll.h" />
+    <entry file="file://$PROJECT_DIR$/util.cpp" />
+    <entry file="file://$PROJECT_DIR$/threadpool.h" />
+    <entry file="file://$PROJECT_DIR$/Poller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="90">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Channel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventLoopThread.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Channel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocketHand.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding>
+            <marker date="1533739940068" expanded="true" signature="202:1189" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocketHand.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2898">
+          <caret line="161" column="36" selection-start-line="161" selection-start-column="36" selection-end-line="161" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1533739940032" expanded="true" signature="190:260" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="330:388" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="440:469" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="519:547" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="599:628" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="679:707" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="765:1023" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="1066:1291" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="1331:1516" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="1588:1742" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="1785:1918" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="1985:2541" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="2580:2680" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="2774:2961" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="3053:3242" ph="{...}" />
+            <marker date="1533739940032" expanded="true" signature="3301:3569" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Socket.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <marker date="1533739939688" expanded="true" signature="113:505" ph="{...}" />
+            <marker date="1533739939688" expanded="true" signature="188:196" ph="{...}" />
+            <marker date="1533739939688" expanded="true" signature="237:268" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Socket.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1533739939968" expanded="true" signature="84:161" ph="{...}" />
+            <marker date="1533739939968" expanded="true" signature="213:276" ph="{...}" />
+            <marker date="1533739939968" expanded="true" signature="300:341" ph="{...}" />
+            <marker date="1533739939968" expanded="true" signature="386:592" ph="{...}" />
+            <marker date="1533739939968" expanded="true" signature="629:726" ph="{...}" />
+            <marker date="1533739939968" expanded="true" signature="763:860" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Connection.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+          <folding>
+            <marker date="1533739939740" expanded="true" signature="350:2207" ph="{...}" />
+            <marker date="1533739939740" expanded="true" signature="916:955" ph="{...}" />
+            <marker date="1533739939740" expanded="true" signature="1016:1052" ph="{...}" />
+            <marker date="1533739939740" expanded="true" signature="1109:1143" ph="{...}" />
+            <marker date="1533739939740" expanded="true" signature="1417:1515" ph="{...}" />
+            <marker date="1533739939740" expanded="true" signature="1558:1587" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Connection.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1533739939916" expanded="true" signature="670:999" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="1027:1031" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="1071:1253" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="1303:1609" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="1640:1914" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="1945:2032" ph="{...}" />
+            <marker date="1533739939916" expanded="true" signature="2073:2333" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myerr.cpp">
+    <entry file="file://$PROJECT_DIR$/base/CallBack.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="234">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http_tast.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6318">
-          <caret line="351" column="25" selection-start-line="351" selection-start-column="25" selection-end-line="351" selection-end-column="25" />
-          <folding>
-            <element signature="e#3242#4545#0" expanded="false" />
-            <element signature="e#4547#5293#0" expanded="false" />
-            <element signature="e#5295#6260#0" expanded="false" />
-            <element signature="e#6262#6485#0" expanded="false" />
-            <element signature="e#6487#7349#0" expanded="false" />
-            <element signature="e#7351#7884#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epoll.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/epoll.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/threadpool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+        <state relative-caret-position="2971">
+          <caret line="345" column="21" selection-start-line="345" selection-start-column="21" selection-end-line="345" selection-end-column="21" />
           <folding />
         </state>
       </provider>

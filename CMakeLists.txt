@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(doker)
+project(sumer)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
 
@@ -41,7 +41,7 @@ set(SOURCE_FILES main.cpp
         Buffer.cpp
         )
 
-add_executable(doker ${SOURCE_FILES})
+add_executable(sumer ${SOURCE_FILES})
 
 find_package(Threads REQUIRED)
-target_link_libraries(doker  Threads::Threads)
+target_link_libraries(sumer  Threads::Threads)

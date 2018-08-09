@@ -58,12 +58,19 @@ public:
     //析构前调用的最后一个函数,用于通知用户连接已断开
     void connectionDestroyed();
 
+    //发送数据，线程安全的
+    void send(const std::string& message);
+
+    //线程安全的
+    void shutdown();
+
 private:
     enum ConnectionState
     {
         D_CONNECTING,
         D_CONNECTED,
-        D_DISCONNECTED
+        D_DISCONNECTED,
+        D_DISCONNECTING
     };
 
     void setConnState(ConnectionState s){
@@ -75,6 +82,9 @@ private:
     void handError();
     void handClose();
 
+    void sendInLoop(const std::string& message);
+    void shutdownInLoop();
+
     EventLoop *_loop;
     std::string _name;
     ConnectionState _connState;
@@ -85,6 +95,7 @@ private:
     InetAddr _peerAddr;
 
     Buffer _inputBuffer;
+    Buffer _outputBuffer;
 
     ConnectionCallBack _connectionCallback;//连接刚建立好之后的调用的回调函数
     MessageCallBack _messageCallback;//收到数据（即read到数据）之后调用的回调函数
