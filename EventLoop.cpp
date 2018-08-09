@@ -9,6 +9,23 @@
 #include <sys/eventfd.h>
 #include <iostream>
 #include <functional>
+#include <signal.h>
+
+
+
+class IgnoreSigPipe
+{
+public:
+    IgnoreSigPipe()
+    {
+        ::signal(SIGPIPE,SIG_IGN);
+    }
+};
+
+//定义一个全局对象，在程序开始之前就忽略SIGPIPE信号
+//全部对象的初始化在main函数之前进行
+
+IgnoreSigPipe initobj;
 
 __thread EventLoop* t_loopInThisThread= nullptr;
 const int kPollTimeMs=10000;
