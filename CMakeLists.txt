@@ -6,6 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
 
 
 set(SOURCE_FILES main.cpp
+        test/echo.h
+        test/echo.cpp
         base/noncopyable.h
         base/Thread.h
         base/Thread.cpp

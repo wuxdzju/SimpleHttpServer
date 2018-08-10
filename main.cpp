@@ -17,6 +17,8 @@
 #include "Channel.h"
 #include "Poller.h"
 #include <string.h>
+#include "test/echo.h"
+
 
 #include <utility>
 #include <set>
@@ -437,13 +439,55 @@ void test10()
     std::fill(message1.begin(),message1.end(),'A');
     std::fill(message2.begin(),message2.end(),'B');
 
-    InetAddr listenAddr(9982);
+    InetAddr listenAddr(9983);
     EventLoop loop;
 
     Server server(&loop,listenAddr);
     server.setConnectionCallBack(onConnection2);
     server.setMessageCallBack(OnMessage2);
     server.start();
+
+    loop.loop();
+}
+
+
+
+void OnConnectionEcho(const ConnectionPtr &conn)
+{
+    std::cout<<"EchoServer - "<<conn->getPeerAddr().toHostPort()<<" -> "
+             <<conn->getLocalAddr().toHostPort()<<" is "<<(conn->Connected()?"UP":"DOWN")<<std::endl;
+    //printf("EchoServer::OnConnection\n");
+}
+
+void OnMessageEcho(const ConnectionPtr &conn, Buffer *buffer, TimeUnit timeUnit)
+{
+    std::string msg(buffer->retrieveAsString());
+    //printf("EchoServer::OnMessage");
+    std::cout<<conn->getName()<<" echo "<<msg.size()<<" bytes,"
+             <<"data receive at "<<timeUnit.ToString()<<std::endl;
+    conn->send(msg);
+}
+
+void test_echo2()
+{
+    printf("main():tid= %d\n",CurrentThread::tid());
+    EventLoop loop;
+    InetAddr listenAddr(9982);
+    Server server(&loop,listenAddr);
+    server.setConnectionCallBack(OnConnectionEcho);
+    server.setMessageCallBack(OnMessageEcho);
+    server.start();
+
+    loop.loop();
+}
+
+void test_echo()
+{
+    printf("main():tid= %d\n",CurrentThread::tid());
+    EventLoop loop;
+    InetAddr listenAddr(9981);
+    EchoServer echoServer(&loop,listenAddr);
+    echoServer.start();
 
     loop.loop();
 }
@@ -461,5 +505,6 @@ int main()
     //test_connection();
     //test3_3();
     //test_connection2();
-    test10();
+    //test10();
+    test_echo();
 }

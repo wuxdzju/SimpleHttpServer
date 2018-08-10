@@ -34,13 +34,13 @@ int Socket::acceptConn(InetAddr *peerAddr)
 void Socket::setReuseAddr(bool on)
 {
     int opval=on?1:0;
-    ::setsockopt(_sockfd,SOL_SOCKET,SO_REUSEADDR,&opval,sizeof(opval));
+    int ret=::setsockopt(_sockfd,SOL_SOCKET,SO_REUSEADDR,&opval,sizeof(opval));
 }
 
 void Socket::setReusePort(bool on)
 {
     int opval=on?1:0;
-    ::setsockopt(_sockfd,SOL_SOCKET,SO_REUSEADDR,&opval,sizeof(opval));
+    int ret= ::setsockopt(_sockfd,SOL_SOCKET,SO_REUSEADDR,&opval,sizeof(opval));
 }
 
 void Socket::shutdownWrite()
