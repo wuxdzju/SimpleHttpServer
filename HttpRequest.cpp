@@ -48,3 +48,20 @@ bool HttpRequest::setMethod(const char *start, const char *end)
 
     return _method;
 }
+
+void HttpRequest::addHeaders(const char *start, const char *colon, const char *end)
+{
+    std::string key(start, colon);
+    ++colon;
+    while (colon < end && isspace(*colon))
+    {
+        ++colon;
+    }
+    std::string value(colon, end);
+    while(!value.empty() && isspace(value[value.size()-1]))
+    {
+        value.resize(value.size()-1);
+    }
+    _headers[key] = value;
+}
+

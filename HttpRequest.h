@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <algorithm>
 
+class Buffer;
+
 class HttpRequest
 {
 public:
@@ -25,13 +27,7 @@ public:
         D_PATCH
     };
 
-    enum CheckState
-    {
-        D_CHECK_REQUESTLINE = 0,
-        D_CHECK_HEADER,
-        D_CHECK_CONTENT,
-        D_CHECK_DONE
-    };
+
 
     enum Version
     {
@@ -41,8 +37,8 @@ public:
     };
 
     HttpRequest()
-            :_method(D_INVALID),
-             _version(D_UNKNOWN)
+            : _method(D_INVALID),
+              _version(D_UNKNOWN)
     {
 
     }
@@ -84,12 +80,51 @@ public:
         return _url;
     }
 
+    void setQuery(const char* start, const char* end)
+    {
+        _query.assign(start, end);
+    }
+
+    const std::string& getQuery() const
+    {
+        return _query;
+    }
+
+    void addHeaders(const char* start, const char* colon, const char* end);
+
+
+    std::string getHeader(const std::string& key) const
+    {
+        return _headers[key];
+    }
+
+    const std::map<std::string,std::string>& getHeaderMap() const
+    {
+        return _headers;
+    };
+
+    void setReceiveTime(TimeUnit receiveTime)
+    {
+        _receiveTime = receiveTime;
+    }
+
+    void swap(HttpRequest& rhs)
+    {
+        std::swap(_method, rhs._method);
+        std::swap(_version, rhs._version);
+        std::swap(_filename, rhs._filename);
+        std::swap(_url, rhs._url);
+        _headers.swap(rhs._headers);
+        _receiveTime.swap(rhs._receiveTime);
+    }
+
 
 private:
     Method _method;
     Version _version;
     std::string _filename;
     std::string _url;
+    std::string _query;
     std::map<string,string> _headers;
     TimeUnit _receiveTime;
 };

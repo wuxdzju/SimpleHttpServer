@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <string>
+#include <algorithm>
 
 class Buffer
 {
@@ -139,6 +140,13 @@ public:
         buf.swap(_buff);
     }
 
+    //找到"\r\n出现的第一个位置"
+    const char* findCRLF() const
+    {
+        const char* crlf = std::search(peek(), beginWrite(),D_CRLF,D_CRLF+2);
+        return crlf == beginWrite() ? nullptr : crlf;
+    }
+
     //直接读数据到buffer中
     ssize_t readFd(int fd,int *saveErrno);
 
@@ -175,6 +183,8 @@ private:
     std::vector<char> _buff;
     int _readerIndex;
     int _writerIndex;
+
+    static const char D_CRLF[];
 };
 
 #endif
