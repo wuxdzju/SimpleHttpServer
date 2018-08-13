@@ -68,7 +68,7 @@ public:
 private:
     HttpStatusCode _stateCode;
     std::string _statusMessage;
-    std::map<string,string> _headers;
+    std::map<std::string, std::string> _headers;
     std::string _body;
     bool _closeConnection;
 };

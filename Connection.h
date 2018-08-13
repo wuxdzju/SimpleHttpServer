@@ -58,7 +58,7 @@ public:
         _httpTask = httpTask;
     }
 
-    HttpTask* getHttpTask() const
+    HttpTask* getHttpTask()
     {
         return &_httpTask;
     }

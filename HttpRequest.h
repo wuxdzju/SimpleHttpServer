@@ -131,9 +131,15 @@ public:
     void addHeaders(const char* start, const char* colon, const char* end);
 
 
-    const std::string getHeader(const std::string& key) const
+    std::string getHeader(const std::string& key) const
     {
-        return _headers[key];
+        std::string result;
+        std::map<std::string,std::string>::const_iterator it = _headers.find(key);
+        if(it != _headers.end())
+        {
+            result = it->second;
+        }
+        return result;
     }
 
     const std::map<std::string,std::string>& getHeaderMap() const

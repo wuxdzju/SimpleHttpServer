@@ -25,7 +25,7 @@ public:
         return _request;
     }
 
-    HttpRequest& getRequest() const
+    HttpRequest& getRequest()
     {
         return _request;
     }

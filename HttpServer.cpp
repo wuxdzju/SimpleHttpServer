@@ -65,7 +65,7 @@ void HttpServer::OnMessage(const ConnectionPtr &conn,
 void HttpServer::OnRequest(const ConnectionPtr& conn,
                            const HttpRequest& request)
 {
-    const string& connection = request.getHeader("Connection");
+    const std::string& connection = request.getHeader("Connection");
     bool close = connection == "close" ||
             (request.getVersion() == HttpRequest::D_HTTP_10 && connection != "Keep-Alive");
     HttpResponse response(close);
