@@ -8,6 +8,7 @@
 #include "base/TimeUnit.h"
 #include "InetAddr.h"
 #include "Buffer.h"
+#include "HttpTask.h"
 
 class EventLoop;
 class Socket;
@@ -50,6 +51,16 @@ public:
     void setCloseCallback(const CloseCallBack& cb)
     {
         _closeCallback=cb;
+    }
+
+    void setHttpTask(HttpTask httpTask)
+    {
+        _httpTask = httpTask;
+    }
+
+    HttpTask* getHttpTask() const
+    {
+        return &_httpTask;
     }
 
     //在Server中调用，当Server接受一个新连接时调用，并且只调用一次
@@ -96,6 +107,8 @@ private:
 
     Buffer _inputBuffer;
     Buffer _outputBuffer;
+
+    HttpTask _httpTask;
 
     ConnectionCallBack _connectionCallback;//连接刚建立好之后的调用的回调函数
     MessageCallBack _messageCallback;//收到数据（即read到数据）之后调用的回调函数

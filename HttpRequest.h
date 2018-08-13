@@ -60,12 +60,50 @@ public:
         return _method;
     }
 
+    const char* methodToString() const
+    {
+        const char* result = "UNKNOWN";
+        switch (_method)
+        {
+            case D_GET:
+                result = "GET";
+                break;
+            case D_POST:
+                result = "POST";
+                break;
+            case D_HEAD:
+                result = "HEAD";
+                break;
+            case D_PUT:
+                result = "PUT";
+                break;
+            case D_DELETE:
+                result = "DELETE";
+                break;
+            case D_CONNECT:
+                result = "CONNECT";
+                break;
+            case D_OPTIONS:
+                result = "OPTIONS";
+                break;
+            case D_PATCH:
+                result = "PATCH";
+                break;
+            case D_TRACE:
+                result = "TRACE";
+                break;
+            default:
+                break;
+        }
+        return  result;
+    }
+
     void setFilename(const char* start, const char* end)
     {
         _filename.assign(start, end);
     }
 
-    const string& getFilename() const
+    const std::string& getFilename() const
     {
         return _filename;
     }
@@ -75,7 +113,7 @@ public:
         _url.assign(start, end);
     }
 
-    const string& getUrl() const
+    const std::string& getUrl() const
     {
         return _url;
     }
@@ -93,7 +131,7 @@ public:
     void addHeaders(const char* start, const char* colon, const char* end);
 
 
-    std::string getHeader(const std::string& key) const
+    const std::string getHeader(const std::string& key) const
     {
         return _headers[key];
     }
@@ -102,6 +140,8 @@ public:
     {
         return _headers;
     };
+
+
 
     void setReceiveTime(TimeUnit receiveTime)
     {
@@ -125,7 +165,7 @@ private:
     std::string _filename;
     std::string _url;
     std::string _query;
-    std::map<string,string> _headers;
+    std::map<std::string,std::string> _headers;
     TimeUnit _receiveTime;
 };
 

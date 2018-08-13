@@ -38,6 +38,11 @@ public:
         _statusMessage = message;
     }
 
+    void setCloseConnection(bool close)
+    {
+        _closeConnection = close;
+    }
+
     bool closeConnection() const
     {
         return _closeConnection;
@@ -46,6 +51,11 @@ public:
     void addHeader(const std::string& key, const std::string& value)
     {
         _headers[key] = value;
+    }
+
+    void setContentType(const std::string& contentType)
+    {
+        addHeader("Content-Type",contentType);
     }
 
     void setBody(std::string body)

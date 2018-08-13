@@ -33,6 +33,10 @@ public:
         _messageCallBack=cb;
     }
 
+    EventLoop* getLoop() const
+    {
+        return _loop;
+    }
 private:
     //不是线程安全的，但是在loop中
     void newConnection(int sockfd,const InetAddr& peerAddr);

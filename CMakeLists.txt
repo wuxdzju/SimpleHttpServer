@@ -41,6 +41,14 @@ set(SOURCE_FILES main.cpp
         Server.cpp
         Buffer.h
         Buffer.cpp
+        HttpRequest.h
+        HttpRequest.cpp
+        HttpResponse.h
+        HttpResponse.cpp
+        HttpTask.h
+        HttpTask.cpp
+        HttpServer.h
+        HttpServer.cpp
         )
 
 add_executable(sumer ${SOURCE_FILES})
