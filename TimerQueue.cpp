@@ -88,14 +88,15 @@ TimerQueue::TimerQueue(EventLoop *loop)
 //该函数返回一个TimerManager类，该类是对Timer的简单管理
 TimerManager TimerQueue::addTimer(const TimerCallBack &tcb, TimeUnit when, double interval)
 {
-    Timer* timer=new Timer(tcb,when,interval);
+    std::shared_ptr<Timer> timer(new Timer(tcb, when, interval));
 
-    _loop->runInLoopThread(std::bind(&TimerQueue::addTimerInLoop,this,timer));
+    _loop->runInLoopThread(
+            std::bind(&TimerQueue::addTimerInLoop, this, timer));
 
     return TimerManager(timer);
 }
 
-void TimerQueue::addTimerInLoop(Timer *timer)
+void TimerQueue::addTimerInLoop(std::shared_ptr<Timer> timer)
 {
     _loop->assertInLoopThread();
 
@@ -109,16 +110,16 @@ void TimerQueue::addTimerInLoop(Timer *timer)
 }
 
 //将一个timer插入到TimerList中去，并判断此timer是否是第一个超时的timer
-bool TimerQueue::insert(Timer* ptimer)
+bool TimerQueue::insert(std::shared_ptr<Timer> ptimer)
 {
     bool isFirstOne= false;
     TimeUnit when=ptimer->expiration();
     TimerList::iterator it=_timers.begin();
-    if(it==_timers.end() || when<it->first)
+    if(it==_timers.end() || when < it->first)
     {
         isFirstOne=true;
     }
-    std::pair<TimerList::iterator,bool> res=_timers.insert(std::make_pair(when,ptimer));
+    std::pair<TimerList::iterator,bool> res=_timers.insert( std::make_pair(when, ptimer) );
     assert(res.second);
     return isFirstOne;
 }
@@ -134,10 +135,6 @@ void TimerQueue::reset(const std::vector<Entry> &expired, TimeUnit now)
         {
             it->second->restart(now);//重新设置该timer的_expiration
             insert(it->second);
-        }
-        else
-        {
-            delete it->second;
         }
     }
 
@@ -157,12 +154,11 @@ void TimerQueue::reset(const std::vector<Entry> &expired, TimeUnit now)
 std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now)
 {
     std::vector<Entry> expired;
-    Entry sentry=std::make_pair(now, reinterpret_cast<Timer*>(UINTPTR_MAX));
+    Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(reinterpret_cast<Timer*>(UINTPTR_MAX)));
     TimerList::iterator it=_timers.lower_bound(sentry);
     assert(it==_timers.end() || now<it->first);
-    for(TimerList::iterator iter=_timers.begin();iter!=it;iter++)
+    for(TimerList::iterator iter=_timers.begin(); iter != it; iter++)
     {
-        //这里使用unique_ptr应该不能进行复制，会出问题吧。。
         expired.push_back(*iter);
     }
 

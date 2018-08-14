@@ -1,19 +1,20 @@
 #ifndef TIMERMANAGER_H
 #define TIMERMANAGER_H
 
-class Timer;
+#include <memory>
 
+class Timer;
 
 class TimerManager
 {
 public:
-    explicit TimerManager(Timer* timer)
+    explicit TimerManager(std::shared_ptr<Timer> timer)
             :_timer(timer)
     {
 
     }
 private:
-    Timer* _timer;
+    std::weak_ptr<Timer> _timer;
 };
 
 #endif

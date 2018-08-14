@@ -38,20 +38,20 @@ public:
     TimerManager addTimer(const TimerCallBack& tcb,TimeUnit when, double interval);
 
 private:
-    typedef std::pair<TimeUnit,Timer* > Entry;
+    typedef std::pair<TimeUnit,std::shared_ptr<Timer> > Entry;
     typedef std::set<Entry> TimerList;
 
     //当超时时调用
     void handRead();
 
     //addTimer的安全版本，供addTimer调用
-    void addTimerInLoop(Timer* timer);
+    void addTimerInLoop(std::shared_ptr<Timer> timer);
 
     //该函数从_timers中移除所有已到期的Timer，并通过vector返回它们
     std::vector<Entry> getExpired(TimeUnit now);
 
     //将ptimer插入到_timers中，并且当该ptimer是第一个元素时，返回true，否则返回false
-    bool insert(Timer* ptimer);
+    bool insert(std::shared_ptr<Timer> ptimer);
     void reset(const std::vector<Entry>& expired,TimeUnit now);
 
     EventLoop* _loop;

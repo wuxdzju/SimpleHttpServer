@@ -37,7 +37,7 @@ Connection::Connection(EventLoop *loop,
 
 Connection::~Connection()
 {
-    assert(_connState == D_CONNECTED);
+    assert(_connState == D_DISCONNECTED);
 }
 
 void Connection::ConnectEstablished()
