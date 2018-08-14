@@ -1,4 +1,4 @@
-# Install script for directory: /home/wuxd/ClionProjects/doker
+# Install script for directory: /home/wuxd/ClionProjects/sumer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/wuxd/ClionProjects/doker/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wuxd/ClionProjects/sumer/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

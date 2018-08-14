@@ -10,6 +10,7 @@
 #include <memory>
 
 class Acceptor;
+class EventLoopThreadPool;
 
 class Server:noncopyable
 {
@@ -33,6 +34,9 @@ public:
         _messageCallBack=cb;
     }
 
+    void setThreadNum(int threadNum);
+
+
     EventLoop* getLoop() const
     {
         return _loop;
@@ -40,7 +44,10 @@ public:
 private:
     //不是线程安全的，但是在loop中
     void newConnection(int sockfd,const InetAddr& peerAddr);
+    //线程安全的
     void removeConnection(const ConnectionPtr& conn);
+
+    void remmoveConnectionInLoop(const ConnectionPtr& conn);
 
     typedef std::map<std::string,ConnectionPtr> ConnectionMap;
 
@@ -52,6 +59,7 @@ private:
     bool _started;
     int _nextConnId;
     ConnectionMap _connections;
+    std::unique_ptr<EventLoopThreadPool> _threadpool;
 };
 
 #endif

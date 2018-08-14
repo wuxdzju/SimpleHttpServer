@@ -1,6 +1,7 @@
 #include "Server.h"
 #include "Acceptor.h"
 #include "EventLoop.h"
+#include "EventLoopThreadPool.h"
 
 #include <memory>
 #include <functional>
@@ -12,6 +13,7 @@ using std::placeholders::_2;
          :_loop(loop),
           _name(listenAddr.toHostPort()),
           _acceptor(new Acceptor(loop,listenAddr)),
+          _threadpool(new EventLoopThreadPool(loop)),
           _started(false),
           _nextConnId(1)
  {
@@ -25,11 +27,17 @@ Server::~Server()
 
 }
 
+void Server::setThreadNum(int threadNum)
+{
+    _threadpool->setThreadNum(threadNum);
+}
+
 void Server::start()
 {
     if(!_started)
     {
         _started= true;
+        _threadpool->start();
     }
 
     if(!_acceptor->isListening())
@@ -55,22 +63,35 @@ void Server::newConnection(int sockfd, const InetAddr &peerAddr)
     InetAddr localaddr(SocketHand::getLocalAddr(sockfd));
 
     //创立一个新的连接，将其加入到server管理的连接map中，设置好该连接的回调函数，并且让该链接处于可读状态
-    ConnectionPtr conn(new Connection(_loop,connName,sockfd,localaddr,peerAddr));
+    EventLoop *ioLoop = _threadpool->getNextLoop();
+    ConnectionPtr conn(
+            new Connection(ioLoop,connName,sockfd,localaddr,peerAddr));
     _connections[connName]=conn;
 
     conn->setConnectionCallback(_connectionCallBack);
     conn->setMessageCallback(_messageCallBack);
     conn->setCloseCallback(std::bind(&Server::removeConnection,this,_1));
-    conn->ConnectEstablished();
+    //conn->ConnectEstablished();
+    ioLoop->runInLoopThread(
+            std::bind(&Connection::ConnectEstablished,conn));
 }
 
 void Server::removeConnection(const ConnectionPtr &conn)
+{
+    _loop->runInLoopThread(
+            std::bind(&Server::remmoveConnectionInLoop,this,conn));
+}
+
+void Server::remmoveConnectionInLoop(const ConnectionPtr &conn)
 {
     _loop->assertInLoopThread();
 
     size_t  n=_connections.erase(conn->getName());
     assert(n==1);
 
-    _loop->queueInLoop(std::bind(&Connection::connectionDestroyed,conn));
+    EventLoop* ioLoop = conn->getLoop();
+
+    ioLoop->queueInLoop(
+            std::bind(&Connection::connectionDestroyed,conn));
 }
 

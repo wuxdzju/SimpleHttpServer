@@ -49,6 +49,9 @@ set(SOURCE_FILES main.cpp
         HttpTask.cpp
         HttpServer.h
         HttpServer.cpp
+        EventLoopThreadPool.h
+        EventLoopThreadPool.cpp
+        test.cpp
         )
 
 add_executable(sumer ${SOURCE_FILES})
