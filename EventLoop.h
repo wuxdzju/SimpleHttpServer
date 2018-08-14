@@ -61,11 +61,11 @@ public:
     //在该时刻执行
     TimerManager runAt(const TimeUnit& timeUnit,const TimerCallBack& tcb);
 
-    //延迟一段时间执行
-    TimerManager runAfter(double delay,const TimerCallBack& tcb);
+    //延迟一段时间执行,delay为延迟时间，单位为秒
+    TimerManager runAfter(double delay,const TimerCallBack& tcb, const TimeUnit& timeUnit = TimeUnit::now());
 
     //每隔一段时间执行
-    TimerManager runEvery(double interval,const TimerCallBack& tcb);
+    TimerManager runEvery(double interval,const TimerCallBack& tcb,  const TimeUnit& timeUnit = TimeUnit::now());
 
     //在当前Eventloop的IO线程中执行回调任务cb,这样可以安全地调用该线程中的回调函数，而不用加锁
     void runInLoopThread(const Functor &cb);

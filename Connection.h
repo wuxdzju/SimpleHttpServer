@@ -24,7 +24,8 @@ public:
                const std::string name,
                int socket,
                const InetAddr& localAddr,
-               const InetAddr& peerAddr);
+               const InetAddr& peerAddr
+    );
 
     ~Connection();
 
@@ -35,6 +36,13 @@ public:
     const InetAddr& getLocalAddr() { return _localAddr; }
 
     const InetAddr& getPeerAddr() { return  _peerAddr; }
+
+    TimeUnit getLastActiveTime() const { return _lastActiveTime; }
+
+    void setLastActiveTime(const TimeUnit& lastActiveTime)
+    {
+        _lastActiveTime = lastActiveTime;
+    }
 
     bool Connected() const { return  _connState==D_CONNECTED; }
 
@@ -75,6 +83,10 @@ public:
     //线程安全的
     void shutdown();
 
+    //主动关闭连接，线程安全的
+    void forceClose();
+    void forceCloseWithDelay(int seconds);
+
 private:
     enum ConnectionState
     {
@@ -95,6 +107,7 @@ private:
 
     void sendInLoop(const std::string& message);
     void shutdownInLoop();
+    void forceCloseInLoop();
 
     EventLoop *_loop;
     std::string _name;
@@ -104,6 +117,8 @@ private:
     std::unique_ptr<Channel> _channel;
     InetAddr _localAddr;
     InetAddr _peerAddr;
+
+    TimeUnit _lastActiveTime;
 
     Buffer _inputBuffer;
     Buffer _outputBuffer;

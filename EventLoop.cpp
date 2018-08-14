@@ -121,15 +121,19 @@ TimerManager EventLoop::runAt(const TimeUnit &timeUnit, const TimerCallBack &tcb
     return _timerQueue->addTimer(tcb,timeUnit,0);
 }
 
-TimerManager EventLoop::runAfter(double delay, const TimerCallBack &tcb)
+TimerManager EventLoop::runAfter(double delay,
+                                 const TimerCallBack &tcb,
+                                 const TimeUnit& timeUnit)
 {
-    TimeUnit time(addTime(TimeUnit::now(),delay));
+    TimeUnit time(addTime(timeUnit,delay));
     runAt(time,tcb);
 }
 
-TimerManager EventLoop::runEvery(double interval, const TimerCallBack &tcb)
+TimerManager EventLoop::runEvery(double interval,
+                                 const TimerCallBack &tcb,
+                                 const TimeUnit& timeUnit)
 {
-    TimeUnit time(addTime(TimeUnit::now(),interval));
+    TimeUnit time(addTime(timeUnit,interval));
     return _timerQueue->addTimer(tcb,time,interval);
 }
 

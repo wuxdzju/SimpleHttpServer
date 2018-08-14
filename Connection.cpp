@@ -4,6 +4,7 @@
 #include "InetAddr.h"
 #include "assert.h"
 #include "EventLoop.h"
+#include "base/WeakCallback.h"
 
 
 #include <unistd.h>
@@ -24,7 +25,8 @@ Connection::Connection(EventLoop *loop,
          _socket(new Socket(socket)),
          _channel(new Channel(loop,socket)),
          _localAddr(localAddr),
-         _peerAddr(peerAddr)
+         _peerAddr(peerAddr),
+         _lastActiveTime(TimeUnit::now())
 {
     //Connection对象拥有_socket和_channel
     _channel->setReadCallBack(std::bind(&Connection::handRead,this,_1));
@@ -35,7 +37,7 @@ Connection::Connection(EventLoop *loop,
 
 Connection::~Connection()
 {
-
+    assert(_connState == D_CONNECTED);
 }
 
 void Connection::ConnectEstablished()
@@ -43,6 +45,7 @@ void Connection::ConnectEstablished()
     _loop->assertInLoopThread();
     assert(_connState==D_CONNECTING);
     setConnState(D_CONNECTED);
+    setLastActiveTime(TimeUnit::now());
     _channel->enableReading();
 
     _connectionCallback(shared_from_this());
@@ -197,5 +200,37 @@ void Connection::handWrite()
     else
     {
         printf("Connection is down,no more writing");
+    }
+}
+
+void Connection::forceClose()
+{
+    if(_connState == D_CONNECTED || _connState == D_DISCONNECTING)
+    {
+        setConnState(D_DISCONNECTING);
+        _loop->queueInLoop(
+                std::bind(&Connection::forceCloseInLoop,shared_from_this()));
+    }
+}
+
+void Connection::forceCloseWithDelay(int seconds)
+{
+    if(_connState == D_CONNECTED || _connState == D_DISCONNECTING)
+    {
+        _loop->runAfter(seconds,
+                        makeWeakCallback(shared_from_this(),
+                                         &Connection::forceClose),
+                        getLastActiveTime());//不直接调用forceCloseInLoop()的原因是为了避免竞争
+                                                                    //因为这是一个延迟调用的函数，可能在seconds之后，
+                                                                    //该连接可能已经被动关闭了，此时直接调用forceCloseInLoop()会发生竞争，因为该连接已经析构了
+    }
+}
+
+void Connection::forceCloseInLoop()
+{
+    _loop->assertInLoopThread();
+    if(_connState == D_CONNECTED ||_connState == D_DISCONNECTING)
+    {
+        handClose();
     }
 }

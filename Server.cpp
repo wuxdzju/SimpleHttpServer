@@ -9,6 +9,8 @@
 using std::placeholders::_1;
 using std::placeholders::_2;
 
+const int timeOutSeconds = 8;//超时时间8s，连接8秒没input的话，则关闭连接
+
  Server::Server(EventLoop *loop, const InetAddr &listenAddr)
          :_loop(loop),
           _name(listenAddr.toHostPort()),
@@ -44,7 +46,8 @@ void Server::start()
     {
         //调用_acceptor中的listen函数
         //_acceptor.get()获取智能指针所拥有的原始指针
-        _loop->runInLoopThread(std::bind(&Acceptor::listen,_acceptor.get()));
+        _loop->runInLoopThread(
+                std::bind(&Acceptor::listen,_acceptor.get()));
     }
 }
 
@@ -68,12 +71,15 @@ void Server::newConnection(int sockfd, const InetAddr &peerAddr)
             new Connection(ioLoop,connName,sockfd,localaddr,peerAddr));
     _connections[connName]=conn;
 
+
     conn->setConnectionCallback(_connectionCallBack);
     conn->setMessageCallback(_messageCallBack);
     conn->setCloseCallback(std::bind(&Server::removeConnection,this,_1));
     //conn->ConnectEstablished();
     ioLoop->runInLoopThread(
             std::bind(&Connection::ConnectEstablished,conn));
+
+    conn->forceCloseWithDelay(timeOutSeconds);
 }
 
 void Server::removeConnection(const ConnectionPtr &conn)
