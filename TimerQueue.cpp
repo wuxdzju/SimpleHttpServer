@@ -1,7 +1,5 @@
 #include "TimerQueue.h"
 #include "Timer.h"
-#include "base/TimeUnit.h"
-#include "TimerManager.h"
 #include "EventLoop.h"
 
 #include <string.h>
@@ -112,6 +110,9 @@ void TimerQueue::addTimerInLoop(std::shared_ptr<Timer> timer)
 //将一个timer插入到TimerList中去，并判断此timer是否是第一个超时的timer
 bool TimerQueue::insert(std::shared_ptr<Timer> ptimer)
 {
+    _loop->assertInLoopThread();
+    assert(_timers.size() == _activeTimerSets.size());
+
     bool isFirstOne= false;
     TimeUnit when=ptimer->expiration();
     TimerList::iterator it=_timers.begin();
@@ -119,8 +120,21 @@ bool TimerQueue::insert(std::shared_ptr<Timer> ptimer)
     {
         isFirstOne=true;
     }
-    std::pair<TimerList::iterator,bool> res=_timers.insert( std::make_pair(when, ptimer) );
-    assert(res.second);
+
+    {
+        std::pair<TimerList::iterator,bool> res
+                = _timers.insert( std::make_pair(when, ptimer) );
+        assert(res.second);
+    }
+
+    {
+        std::pair<ActiveTimerSet::iterator,bool> res
+                = _activeTimerSets.insert(ptimer);
+        assert(res.second);
+    }
+
+    assert(_timers.size() == _activeTimerSets.size());
+
     return isFirstOne;
 }
 
@@ -131,7 +145,8 @@ void TimerQueue::reset(const std::vector<Entry> &expired, TimeUnit now)
 
     for(std::vector<Entry>::const_iterator it=expired.begin();it!=expired.end();++it)
     {
-        if(it->second->repeat())
+        if(it->second->repeat()
+           && _cancelTimersets.find(it->second) == _cancelTimersets.end())
         {
             it->second->restart(now);//重新设置该timer的_expiration
             insert(it->second);
@@ -153,6 +168,8 @@ void TimerQueue::reset(const std::vector<Entry> &expired, TimeUnit now)
 //通过该函数可以获得当前所有超时的timer
 std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now)
 {
+    assert(_timers.size() == _activeTimerSets.size());
+
     std::vector<Entry> expired;
     Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(reinterpret_cast<Timer*>(UINTPTR_MAX)));
     TimerList::iterator it=_timers.lower_bound(sentry);
@@ -164,6 +181,12 @@ std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now)
 
     //删除_timers中已过期的timer
     _timers.erase(_timers.begin(),it);
+
+    for(Entry entry : expired)
+    {
+        size_t n = _activeTimerSets.erase(entry.second);
+        assert(n == 1);
+    }
 
     return expired;
 }
@@ -179,15 +202,43 @@ void TimerQueue::handRead()
 
     std::vector<Entry> expired=getExpired(now);
 
+    _callingExpiredTimers = true;
+    _cancelTimersets.clear();
     //安全地调用外面的临界区
     for(std::vector<Entry>::iterator it=expired.begin();it!=expired.end();++it)
     {
         it->second->run();
     }
+    _callingExpiredTimers = false;
 
     //重新设置expired事件，并且重新设置_timefd的超时时刻(重新注册可读事件)
     reset(expired,now);
+}
 
+void TimerQueue::cancelTimer(TimerManager timerManager)
+{
+    _loop->runInLoopThread
+            (std::bind(&TimerQueue::cancelTimerInLoop, this, timerManager));
+}
+
+void TimerQueue::cancelTimerInLoop(TimerManager timerManager)
+{
+    _loop->assertInLoopThread();
+    assert(_timers.size() == _activeTimerSets.size());
+    std::shared_ptr<Timer> timer(timerManager.getTimer());
+    ActiveTimerSet::iterator it = _activeTimerSets.find(timer);
+    if(it != _activeTimerSets.end())
+    {
+
+        size_t  n = _timers.erase(Entry((*it)->expiration(),(*it)));
+        assert(n == 1);
+        _activeTimerSets.erase(*it);
+    }
+    else if (_callingExpiredTimers)
+    {
+        _cancelTimersets.insert(timer);
+    }
+    assert(_timers.size() == _activeTimerSets.size());
 }
 
 

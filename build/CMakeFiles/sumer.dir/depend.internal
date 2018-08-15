@@ -46,6 +46,7 @@ CMakeFiles/sumer.dir/Connection.cpp.o
  /home/wuxd/ClionProjects/sumer/base/CurrentThread.h
  /home/wuxd/ClionProjects/sumer/base/MutexLock.h
  /home/wuxd/ClionProjects/sumer/base/TimeUnit.h
+ /home/wuxd/ClionProjects/sumer/base/WeakCallback.h
  /home/wuxd/ClionProjects/sumer/base/noncopyable.h
 CMakeFiles/sumer.dir/EventLoop.cpp.o
  /home/wuxd/ClionProjects/sumer/Channel.h

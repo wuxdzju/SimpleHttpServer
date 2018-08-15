@@ -13,6 +13,7 @@
 #include "base/CallBack.h"
 #include "Channel.h"
 #include "base/TimeUnit.h"
+#include "TimerManager.h"
 
 
 #include <utility>
@@ -21,7 +22,6 @@
 #include <vector>
 
 class Timer;
-class TimerManager;
 class EventLoop;
 
 
@@ -37,15 +37,22 @@ public:
     //addTimer是供Eventloop使用的，Eventloop会把它封装成更好用的函数
     TimerManager addTimer(const TimerCallBack& tcb,TimeUnit when, double interval);
 
+    void cancelTimer(TimerManager timerManager);
+
 private:
-    typedef std::pair<TimeUnit,std::shared_ptr<Timer> > Entry;
+    typedef std::pair<TimeUnit, std::shared_ptr<Timer> > Entry;
+    //使用set的好处是，系统会为我们自动去重，使用set的insert函数，第一次插入时，会新建一项，
+    // 后面再对同样的项进行插入动作时，并不会插入新的项，而是修改已有的项
     typedef std::set<Entry> TimerList;
+    typedef std::set<std::shared_ptr<Timer> > ActiveTimerSet;
 
     //当超时时调用
     void handRead();
 
     //addTimer的安全版本，供addTimer调用
     void addTimerInLoop(std::shared_ptr<Timer> timer);
+
+    void cancelTimerInLoop(TimerManager timerManager);
 
     //该函数从_timers中移除所有已到期的Timer，并通过vector返回它们
     std::vector<Entry> getExpired(TimeUnit now);
@@ -59,6 +66,10 @@ private:
     Channel _timerfdChannel;
     //TimerList根据expiration排序?
     TimerList _timers;
+
+    bool _callingExpiredTimers;
+    ActiveTimerSet _activeTimerSets;
+    ActiveTimerSet _cancelTimersets;
 };
 
 #endif

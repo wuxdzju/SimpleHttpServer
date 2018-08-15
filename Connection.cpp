@@ -12,7 +12,7 @@
 #include <iostream>
 
 using std::placeholders::_1;
-
+extern const int timeOutSeconds;
 
 Connection::Connection(EventLoop *loop,
                        const std::string name,
@@ -51,14 +51,18 @@ void Connection::ConnectEstablished()
     _connectionCallback(shared_from_this());
 }
 
-void Connection::handRead(TimeUnit recieveTime)
+void Connection::handRead(TimeUnit receiveTime)
 {
+    _loop->assertInLoopThread();
+    std::cout<<timeOutSeconds<<std::endl;
+    //更新Connection的_lastActivetime
+    //forceCloseWithDelay(timeOutSeconds);
 
     int savedErrno=0;
     ssize_t  n=_inputBuffer.readFd(_channel->fd(),&savedErrno);
     if(n>0)
     {
-        _messageCallback(shared_from_this(),&_inputBuffer,recieveTime);
+        _messageCallback(shared_from_this(),&_inputBuffer,receiveTime);
     }
     else if(n==0)
     {
@@ -87,6 +91,7 @@ void Connection::handClose()
 void Connection::handError()
 {
     //todo 打印错误信息
+    _loop->assertInLoopThread();
     std::cout<<"Connection::handError()["<<_name<<"]"<<std::endl;
 }
 
@@ -228,6 +233,7 @@ void Connection::forceCloseWithDelay(int seconds)
 
 void Connection::forceCloseInLoop()
 {
+    std::cout<<"Connection::forceCloseInLoop()"<<std::endl;
     _loop->assertInLoopThread();
     if(_connState == D_CONNECTED ||_connState == D_DISCONNECTING)
     {

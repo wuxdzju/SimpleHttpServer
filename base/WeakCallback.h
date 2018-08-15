@@ -16,7 +16,7 @@ public:
 
     }
 
-    void operator() () const
+    void operator() ()const
     {
         std::shared_ptr<CLASS> ptr(_object.lock());
         if(ptr)

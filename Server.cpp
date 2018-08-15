@@ -9,7 +9,7 @@
 using std::placeholders::_1;
 using std::placeholders::_2;
 
-const int timeOutSeconds = 8;//超时时间8s，连接8秒没input的话，则关闭连接
+extern const int timeOutSeconds = 300;//超时时间8s，连接8秒没input的话，则关闭连接
 
  Server::Server(EventLoop *loop, const InetAddr &listenAddr)
          :_loop(loop),
@@ -79,7 +79,7 @@ void Server::newConnection(int sockfd, const InetAddr &peerAddr)
     ioLoop->runInLoopThread(
             std::bind(&Connection::ConnectEstablished,conn));
 
-    conn->forceCloseWithDelay(timeOutSeconds);
+    //conn->forceCloseWithDelay(timeOutSeconds);
 }
 
 void Server::removeConnection(const ConnectionPtr &conn)

@@ -513,9 +513,13 @@ void OnMessageThreadPool(const ConnectionPtr &conn,
                          Buffer* buf,
                          TimeUnit receiveTime)
 {
+//    printf("%s\n",receiveTime.ToFormatString().c_str());
+//    printf("%zd\n",buf->readableBytes());
+//    printf("%d\n",CurrentThread::tid());
     printf("OnMessage(): tid=%d received %zd bytes from connection [%s] at %s\n",
            CurrentThread::tid(),
            buf->readableBytes(),
+           conn->getName().c_str(),
            receiveTime.ToFormatString().c_str());
     printf("OnMessage(): [%s]\n",buf->retrieveAsString().c_str());
 }

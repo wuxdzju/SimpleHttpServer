@@ -13,6 +13,11 @@ public:
     {
 
     }
+
+    std::weak_ptr<Timer> getTimer() const
+    {
+        return _timer;
+    }
 private:
     std::weak_ptr<Timer> _timer;
 };

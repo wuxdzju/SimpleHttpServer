@@ -77,6 +77,8 @@ assert.h
 /home/wuxd/ClionProjects/sumer/assert.h
 EventLoop.h
 /home/wuxd/ClionProjects/sumer/EventLoop.h
+base/WeakCallback.h
+/home/wuxd/ClionProjects/sumer/base/WeakCallback.h
 unistd.h
 -
 functional
@@ -371,16 +373,14 @@ functional
 -
 
 /home/wuxd/ClionProjects/sumer/TimerManager.h
+memory
+-
 
 /home/wuxd/ClionProjects/sumer/TimerQueue.cpp
 TimerQueue.h
 /home/wuxd/ClionProjects/sumer/TimerQueue.h
 Timer.h
 /home/wuxd/ClionProjects/sumer/Timer.h
-base/TimeUnit.h
-/home/wuxd/ClionProjects/sumer/base/TimeUnit.h
-TimerManager.h
-/home/wuxd/ClionProjects/sumer/TimerManager.h
 EventLoop.h
 /home/wuxd/ClionProjects/sumer/EventLoop.h
 string.h
@@ -401,6 +401,8 @@ Channel.h
 /home/wuxd/ClionProjects/sumer/Channel.h
 base/TimeUnit.h
 /home/wuxd/ClionProjects/sumer/base/TimeUnit.h
+TimerManager.h
+/home/wuxd/ClionProjects/sumer/TimerManager.h
 utility
 -
 set
@@ -474,6 +476,12 @@ inttypes.h
 string
 -
 stdint.h
+-
+
+/home/wuxd/ClionProjects/sumer/base/WeakCallback.h
+memory
+-
+functional
 -
 
 /home/wuxd/ClionProjects/sumer/base/noncopyable.h

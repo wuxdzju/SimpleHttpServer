@@ -45,6 +45,7 @@ CMakeFiles/sumer.dir/Connection.cpp.o: ../base/CallBack.h
 CMakeFiles/sumer.dir/Connection.cpp.o: ../base/CurrentThread.h
 CMakeFiles/sumer.dir/Connection.cpp.o: ../base/MutexLock.h
 CMakeFiles/sumer.dir/Connection.cpp.o: ../base/TimeUnit.h
+CMakeFiles/sumer.dir/Connection.cpp.o: ../base/WeakCallback.h
 CMakeFiles/sumer.dir/Connection.cpp.o: ../base/noncopyable.h
 
 CMakeFiles/sumer.dir/EventLoop.cpp.o: ../Channel.h
