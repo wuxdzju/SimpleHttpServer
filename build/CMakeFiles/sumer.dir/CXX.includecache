@@ -403,6 +403,8 @@ base/TimeUnit.h
 /home/wuxd/ClionProjects/sumer/base/TimeUnit.h
 TimerManager.h
 /home/wuxd/ClionProjects/sumer/TimerManager.h
+Timer.h
+/home/wuxd/ClionProjects/sumer/Timer.h
 utility
 -
 set

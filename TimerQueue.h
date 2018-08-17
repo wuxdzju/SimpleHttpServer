@@ -14,6 +14,7 @@
 #include "Channel.h"
 #include "base/TimeUnit.h"
 #include "TimerManager.h"
+#include "Timer.h"
 
 
 #include <utility>
@@ -21,13 +22,19 @@
 #include <memory>
 #include <vector>
 
-class Timer;
+//class Timer;
 class EventLoop;
 
 
 class TimerQueue:noncopyable
 {
 public:
+
+    typedef std::pair<TimeUnit, std::shared_ptr<Timer> > Entry;
+    //使用set的好处是，系统会为我们自动去重，使用set的insert函数，第一次插入时，会新建一项，
+    // 后面再对同样的项进行插入动作时，并不会插入新的项，而是修改已有的项
+    typedef std::set<Entry> TimerList;
+    typedef std::set<std::shared_ptr<Timer> > ActiveTimerSet;
     
     TimerQueue(EventLoop *loop);
     ~TimerQueue(){}
@@ -40,11 +47,7 @@ public:
     void cancelTimer(TimerManager timerManager);
 
 private:
-    typedef std::pair<TimeUnit, std::shared_ptr<Timer> > Entry;
-    //使用set的好处是，系统会为我们自动去重，使用set的insert函数，第一次插入时，会新建一项，
-    // 后面再对同样的项进行插入动作时，并不会插入新的项，而是修改已有的项
-    typedef std::set<Entry> TimerList;
-    typedef std::set<std::shared_ptr<Timer> > ActiveTimerSet;
+
 
     //当超时时调用
     void handRead();
@@ -55,6 +58,7 @@ private:
     void cancelTimerInLoop(TimerManager timerManager);
 
     //该函数从_timers中移除所有已到期的Timer，并通过vector返回它们
+    //std::vector<Entry> getExpired(TimeUnit now);
     std::vector<Entry> getExpired(TimeUnit now);
 
     //将ptimer插入到_timers中，并且当该ptimer是第一个元素时，返回true，否则返回false

@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <assert.h>
 
+
+
 //timerfd_*系列函数的封装
 namespace timerdetail
 {
@@ -63,7 +65,6 @@ namespace timerdetail
 }
 
 using namespace timerdetail;
-
 
 /*
  * 给所有的超时处理事件分配一个线程，该线程也拥有唯一的一个事件循环Eventloop
@@ -166,12 +167,14 @@ void TimerQueue::reset(const std::vector<Entry> &expired, TimeUnit now)
 
 //该函数从_timers中移除所有已到期的Timer，并通过vector返回它们
 //通过该函数可以获得当前所有超时的timer
-std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now)
-{
+
+std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now) {
     assert(_timers.size() == _activeTimerSets.size());
 
     std::vector<Entry> expired;
-    Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(reinterpret_cast<Timer*>(UINTPTR_MAX)));
+    expired.clear();
+    //Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(reinterpret_cast<Timer*>(UINTPTR_MAX)));//因为shared_ptr对象析构时，要free所保存的指针，故这里不能用UINTPTR_MAX，因为这是一个非法地址
+    Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(nullptr));
     TimerList::iterator it=_timers.lower_bound(sentry);
     assert(it==_timers.end() || now<it->first);
     for(TimerList::iterator iter=_timers.begin(); iter != it; iter++)
@@ -182,12 +185,11 @@ std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now)
     //删除_timers中已过期的timer
     _timers.erase(_timers.begin(),it);
 
-    for(Entry entry : expired)
+    for(const Entry &entry : expired)
     {
         size_t n = _activeTimerSets.erase(entry.second);
         assert(n == 1);
     }
-
     return expired;
 }
 
@@ -200,7 +202,7 @@ void TimerQueue::handRead()
     readTimerfd(_timerfd,now);
 
 
-    std::vector<Entry> expired=getExpired(now);
+    std::vector<Entry> expired = getExpired(now);
 
     _callingExpiredTimers = true;
     _cancelTimersets.clear();
@@ -240,6 +242,8 @@ void TimerQueue::cancelTimerInLoop(TimerManager timerManager)
     }
     assert(_timers.size() == _activeTimerSets.size());
 }
+
+
 
 
 

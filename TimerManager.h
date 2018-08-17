@@ -16,7 +16,7 @@ public:
 
     std::weak_ptr<Timer> getTimer() const
     {
-        return _timer;
+        return _timer.lock();
     }
 private:
     std::weak_ptr<Timer> _timer;

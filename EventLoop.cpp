@@ -126,7 +126,7 @@ TimerManager EventLoop::runAfter(double delay,
                                  const TimeUnit& timeUnit)
 {
     TimeUnit time(addTime(timeUnit,delay));
-    runAt(time,tcb);
+    return  runAt(time,tcb);
 }
 
 TimerManager EventLoop::runEvery(double interval,
