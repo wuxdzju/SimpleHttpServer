@@ -109,6 +109,9 @@ private:
     void shutdownInLoop();
     void forceCloseInLoop();
 
+    bool canDeleted() const ;
+
+
     EventLoop *_loop;
     std::string _name;
     ConnectionState _connState;
@@ -124,6 +127,7 @@ private:
     Buffer _outputBuffer;
 
     HttpTask _httpTask;
+
 
     ConnectionCallBack _connectionCallback;//连接刚建立好之后的调用的回调函数
     MessageCallBack _messageCallback;//收到数据（即read到数据）之后调用的回调函数

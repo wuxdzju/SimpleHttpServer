@@ -37,6 +37,7 @@ Connection::Connection(EventLoop *loop,
 
 Connection::~Connection()
 {
+    std::cout<<"Connection::~Connection()"<<std::endl;
     assert(_connState == D_DISCONNECTED);
 }
 
@@ -54,9 +55,10 @@ void Connection::ConnectEstablished()
 void Connection::handRead(TimeUnit receiveTime)
 {
     _loop->assertInLoopThread();
-    std::cout<<timeOutSeconds<<std::endl;
+    //std::cout<<timeOutSeconds<<std::endl;
     //更新Connection的_lastActivetime
-    //forceCloseWithDelay(timeOutSeconds);
+    setLastActiveTime(receiveTime);
+    forceCloseWithDelay(timeOutSeconds);
 
     int savedErrno=0;
     ssize_t  n=_inputBuffer.readFd(_channel->fd(),&savedErrno);
@@ -218,6 +220,12 @@ void Connection::forceClose()
     }
 }
 
+bool Connection::canDeleted() const
+{
+    TimeUnit expiredTime = addTime(_lastActiveTime, timeOutSeconds);
+    return expiredTime <= TimeUnit::now();
+}
+
 void Connection::forceCloseWithDelay(int seconds)
 {
     if(_connState == D_CONNECTED || _connState == D_DISCONNECTING)
@@ -233,8 +241,11 @@ void Connection::forceCloseWithDelay(int seconds)
 
 void Connection::forceCloseInLoop()
 {
-    std::cout<<"Connection::forceCloseInLoop()"<<std::endl;
+    //std::cout<<"Connection::forceCloseInLoop()"<<std::endl;
     _loop->assertInLoopThread();
+    if(!canDeleted())
+        return;
+
     if(_connState == D_CONNECTED ||_connState == D_DISCONNECTING)
     {
         handClose();
