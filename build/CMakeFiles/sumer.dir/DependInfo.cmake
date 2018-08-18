@@ -24,8 +24,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wuxd/ClionProjects/sumer/base/Thread.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/base/Thread.cpp.o"
   "/home/wuxd/ClionProjects/sumer/base/TimeUnit.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/base/TimeUnit.cpp.o"
   "/home/wuxd/ClionProjects/sumer/main.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/main.cpp.o"
-  "/home/wuxd/ClionProjects/sumer/test.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/test.cpp.o"
   "/home/wuxd/ClionProjects/sumer/test/echo.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/test/echo.cpp.o"
+  "/home/wuxd/ClionProjects/sumer/test/test.cpp" "/home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir/test/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

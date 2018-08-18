@@ -20,7 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sumer.dir/HttpTask.cpp.o"
   "CMakeFiles/sumer.dir/HttpServer.cpp.o"
   "CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o"
-  "CMakeFiles/sumer.dir/test.cpp.o"
+  "CMakeFiles/sumer.dir/test/test.cpp.o"
   "sumer.pdb"
   "sumer"
 )

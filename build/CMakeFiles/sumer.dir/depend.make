@@ -204,31 +204,6 @@ CMakeFiles/sumer.dir/main.cpp.o: ../base/TimeUnit.h
 CMakeFiles/sumer.dir/main.cpp.o: ../base/noncopyable.h
 CMakeFiles/sumer.dir/main.cpp.o: ../main.cpp
 
-CMakeFiles/sumer.dir/test.cpp.o: ../Acceptor.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Buffer.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Channel.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Connection.h
-CMakeFiles/sumer.dir/test.cpp.o: ../EventLoop.h
-CMakeFiles/sumer.dir/test.cpp.o: ../EventLoopThread.h
-CMakeFiles/sumer.dir/test.cpp.o: ../HttpRequest.h
-CMakeFiles/sumer.dir/test.cpp.o: ../HttpTask.h
-CMakeFiles/sumer.dir/test.cpp.o: ../InetAddr.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Poller.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Server.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Socket.h
-CMakeFiles/sumer.dir/test.cpp.o: ../SocketHand.h
-CMakeFiles/sumer.dir/test.cpp.o: ../Timer.h
-CMakeFiles/sumer.dir/test.cpp.o: ../TimerManager.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/CallBack.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/Condition.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/CurrentThread.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/MutexLock.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/Thread.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/TimeUnit.h
-CMakeFiles/sumer.dir/test.cpp.o: ../base/noncopyable.h
-CMakeFiles/sumer.dir/test.cpp.o: ../test.cpp
-CMakeFiles/sumer.dir/test.cpp.o: ../test/echo.h
-
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../Buffer.h
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../Connection.h
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../EventLoop.h
@@ -245,4 +220,29 @@ CMakeFiles/sumer.dir/test/echo.cpp.o: ../base/TimeUnit.h
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../base/noncopyable.h
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../test/echo.cpp
 CMakeFiles/sumer.dir/test/echo.cpp.o: ../test/echo.h
+
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Acceptor.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Buffer.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Channel.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Connection.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../EventLoop.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../EventLoopThread.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../HttpRequest.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../HttpTask.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../InetAddr.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Poller.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Server.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Socket.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../SocketHand.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../Timer.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../TimerManager.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/CallBack.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/Condition.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/CurrentThread.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/MutexLock.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/Thread.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/TimeUnit.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../base/noncopyable.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../test/echo.h
+CMakeFiles/sumer.dir/test/test.cpp.o: ../test/test.cpp
 

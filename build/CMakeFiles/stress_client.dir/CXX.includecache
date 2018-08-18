@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wuxd/ClionProjects/sumer/test/stress_client.cpp
+stdlib.h
+-
+stdio.h
+-
+assert.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/epoll.h
+-
+fcntl.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+string.h
+-
+

@@ -1,3 +1,4 @@
 /home/wuxd/ClionProjects/sumer/build/CMakeFiles/edit_cache.dir
 /home/wuxd/ClionProjects/sumer/build/CMakeFiles/rebuild_cache.dir
+/home/wuxd/ClionProjects/sumer/build/CMakeFiles/stress_client.dir
 /home/wuxd/ClionProjects/sumer/build/CMakeFiles/sumer.dir

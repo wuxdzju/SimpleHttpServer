@@ -48,5 +48,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/stress_client.dir/DependInfo.cmake"
   "CMakeFiles/sumer.dir/DependInfo.cmake"
   )

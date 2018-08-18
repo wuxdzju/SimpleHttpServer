@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named stress_client
+
+# Build rule for target.
+stress_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 stress_client
+.PHONY : stress_client
+
+# fast build rule for target.
+stress_client/fast:
+	$(MAKE) -f CMakeFiles/stress_client.dir/build.make CMakeFiles/stress_client.dir/build
+.PHONY : stress_client/fast
+
+#=============================================================================
 # Target rules for targets named sumer
 
 # Build rule for target.
@@ -663,33 +676,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-test.o: test.cpp.o
-
-.PHONY : test.o
-
-# target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test.cpp.o
-.PHONY : test.cpp.o
-
-test.i: test.cpp.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 test/echo.o: test/echo.cpp.o
 
 .PHONY : test/echo.o
@@ -717,6 +703,60 @@ test/echo.cpp.s:
 	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test/echo.cpp.s
 .PHONY : test/echo.cpp.s
 
+test/stress_client.o: test/stress_client.cpp.o
+
+.PHONY : test/stress_client.o
+
+# target to build an object file
+test/stress_client.cpp.o:
+	$(MAKE) -f CMakeFiles/stress_client.dir/build.make CMakeFiles/stress_client.dir/test/stress_client.cpp.o
+.PHONY : test/stress_client.cpp.o
+
+test/stress_client.i: test/stress_client.cpp.i
+
+.PHONY : test/stress_client.i
+
+# target to preprocess a source file
+test/stress_client.cpp.i:
+	$(MAKE) -f CMakeFiles/stress_client.dir/build.make CMakeFiles/stress_client.dir/test/stress_client.cpp.i
+.PHONY : test/stress_client.cpp.i
+
+test/stress_client.s: test/stress_client.cpp.s
+
+.PHONY : test/stress_client.s
+
+# target to generate assembly for a file
+test/stress_client.cpp.s:
+	$(MAKE) -f CMakeFiles/stress_client.dir/build.make CMakeFiles/stress_client.dir/test/stress_client.cpp.s
+.PHONY : test/stress_client.cpp.s
+
+test/test.o: test/test.cpp.o
+
+.PHONY : test/test.o
+
+# target to build an object file
+test/test.cpp.o:
+	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test/test.cpp.o
+.PHONY : test/test.cpp.o
+
+test/test.i: test/test.cpp.i
+
+.PHONY : test/test.i
+
+# target to preprocess a source file
+test/test.cpp.i:
+	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test/test.cpp.i
+.PHONY : test/test.cpp.i
+
+test/test.s: test/test.cpp.s
+
+.PHONY : test/test.s
+
+# target to generate assembly for a file
+test/test.cpp.s:
+	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test/test.cpp.s
+.PHONY : test/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -725,6 +765,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... stress_client"
 	@echo "... sumer"
 	@echo "... Acceptor.o"
 	@echo "... Acceptor.i"
@@ -786,12 +827,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 	@echo "... test/echo.o"
 	@echo "... test/echo.i"
 	@echo "... test/echo.s"
+	@echo "... test/stress_client.o"
+	@echo "... test/stress_client.i"
+	@echo "... test/stress_client.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 .PHONY : help
 
 

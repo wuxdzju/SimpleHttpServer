@@ -561,28 +561,28 @@ CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o.provides: CMakeFiles/sumer.dir/Ev
 CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o.provides.build: CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o
 
 
-CMakeFiles/sumer.dir/test.cpp.o: CMakeFiles/sumer.dir/flags.make
-CMakeFiles/sumer.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wuxd/ClionProjects/sumer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sumer.dir/test.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sumer.dir/test.cpp.o -c /home/wuxd/ClionProjects/sumer/test.cpp
+CMakeFiles/sumer.dir/test/test.cpp.o: CMakeFiles/sumer.dir/flags.make
+CMakeFiles/sumer.dir/test/test.cpp.o: ../test/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wuxd/ClionProjects/sumer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sumer.dir/test/test.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sumer.dir/test/test.cpp.o -c /home/wuxd/ClionProjects/sumer/test/test.cpp
 
-CMakeFiles/sumer.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sumer.dir/test.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wuxd/ClionProjects/sumer/test.cpp > CMakeFiles/sumer.dir/test.cpp.i
+CMakeFiles/sumer.dir/test/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sumer.dir/test/test.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wuxd/ClionProjects/sumer/test/test.cpp > CMakeFiles/sumer.dir/test/test.cpp.i
 
-CMakeFiles/sumer.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sumer.dir/test.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wuxd/ClionProjects/sumer/test.cpp -o CMakeFiles/sumer.dir/test.cpp.s
+CMakeFiles/sumer.dir/test/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sumer.dir/test/test.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wuxd/ClionProjects/sumer/test/test.cpp -o CMakeFiles/sumer.dir/test/test.cpp.s
 
-CMakeFiles/sumer.dir/test.cpp.o.requires:
+CMakeFiles/sumer.dir/test/test.cpp.o.requires:
 
-.PHONY : CMakeFiles/sumer.dir/test.cpp.o.requires
+.PHONY : CMakeFiles/sumer.dir/test/test.cpp.o.requires
 
-CMakeFiles/sumer.dir/test.cpp.o.provides: CMakeFiles/sumer.dir/test.cpp.o.requires
-	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test.cpp.o.provides.build
-.PHONY : CMakeFiles/sumer.dir/test.cpp.o.provides
+CMakeFiles/sumer.dir/test/test.cpp.o.provides: CMakeFiles/sumer.dir/test/test.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sumer.dir/build.make CMakeFiles/sumer.dir/test/test.cpp.o.provides.build
+.PHONY : CMakeFiles/sumer.dir/test/test.cpp.o.provides
 
-CMakeFiles/sumer.dir/test.cpp.o.provides.build: CMakeFiles/sumer.dir/test.cpp.o
+CMakeFiles/sumer.dir/test/test.cpp.o.provides.build: CMakeFiles/sumer.dir/test/test.cpp.o
 
 
 # Object files for target sumer
@@ -608,7 +608,7 @@ sumer_OBJECTS = \
 "CMakeFiles/sumer.dir/HttpTask.cpp.o" \
 "CMakeFiles/sumer.dir/HttpServer.cpp.o" \
 "CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o" \
-"CMakeFiles/sumer.dir/test.cpp.o"
+"CMakeFiles/sumer.dir/test/test.cpp.o"
 
 # External object files for target sumer
 sumer_EXTERNAL_OBJECTS =
@@ -634,7 +634,7 @@ sumer: CMakeFiles/sumer.dir/HttpResponse.cpp.o
 sumer: CMakeFiles/sumer.dir/HttpTask.cpp.o
 sumer: CMakeFiles/sumer.dir/HttpServer.cpp.o
 sumer: CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o
-sumer: CMakeFiles/sumer.dir/test.cpp.o
+sumer: CMakeFiles/sumer.dir/test/test.cpp.o
 sumer: CMakeFiles/sumer.dir/build.make
 sumer: CMakeFiles/sumer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wuxd/ClionProjects/sumer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable sumer"
@@ -666,7 +666,7 @@ CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/HttpResponse.cpp.o.requires
 CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/HttpTask.cpp.o.requires
 CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/HttpServer.cpp.o.requires
 CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o.requires
-CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/test.cpp.o.requires
+CMakeFiles/sumer.dir/requires: CMakeFiles/sumer.dir/test/test.cpp.o.requires
 
 .PHONY : CMakeFiles/sumer.dir/requires
 
