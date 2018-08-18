@@ -15,7 +15,7 @@ extern const int timeOutSeconds = 8;//超时时间8s，连接8秒没input的话�
          :_loop(loop),
           _name(listenAddr.toHostPort()),
           _acceptor(new Acceptor(loop,listenAddr)),
-          _threadpool(new EventLoopThreadPool(loop)),
+          _threadpool(new EventLoopThreadPool(loop, 4)),
           _started(false),
           _nextConnId(1)
  {
@@ -86,7 +86,7 @@ void Server::newConnection(int sockfd, const InetAddr &peerAddr)
             std::bind(&Connection::ConnectEstablished,conn));
 
     //ioLoop->runAfter(timeOutSeconds,timeouttest);
-    conn->forceCloseWithDelay(timeOutSeconds);
+    //conn->forceCloseWithDelay(timeOutSeconds);
 }
 
 void Server::removeConnection(const ConnectionPtr &conn)

@@ -55,14 +55,14 @@ void OnRequest(const HttpRequest& request, HttpResponse* response)
 }
 
 
-//int main(int argc, char* argv[])
-//{
-////    EventLoop loop;
-////    HttpServer httpServer(&loop,InetAddr(5050));
-////    httpServer.setHttpCallBack(OnRequest);
-////    httpServer.start();
-////    loop.loop();
-//}
+int main(int argc, char* argv[])
+{
+    EventLoop loop;
+    HttpServer httpServer(&loop,InetAddr(9982));
+    httpServer.setHttpCallBack(OnRequest);
+    httpServer.start();
+    loop.loop();
+}
 
 char favicon[555] = {
         '\x89', 'P', 'N', 'G', '\xD', '\xA', '\x1A', '\xA',

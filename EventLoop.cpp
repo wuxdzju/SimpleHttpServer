@@ -206,5 +206,7 @@ void EventLoop::handRead()
 
 void EventLoop::removeChannel(Channel *channel)
 {
-
+    assert(channel->ownerLoop() == this);
+    assertInLoopThread();
+    _poller->removeChannel(channel);
 }

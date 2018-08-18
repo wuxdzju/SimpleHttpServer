@@ -57,8 +57,8 @@ void Connection::handRead(TimeUnit receiveTime)
     _loop->assertInLoopThread();
     //std::cout<<timeOutSeconds<<std::endl;
     //更新Connection的_lastActivetime
-    setLastActiveTime(receiveTime);
-    forceCloseWithDelay(timeOutSeconds);
+    //setLastActiveTime(receiveTime);
+    //forceCloseWithDelay(timeOutSeconds);
 
     int savedErrno=0;
     ssize_t  n=_inputBuffer.readFd(_channel->fd(),&savedErrno);
@@ -140,6 +140,22 @@ void Connection::send(const std::string &message)
         else
         {
             _loop->runInLoopThread(std::bind(&Connection::sendInLoop,this,message));
+        }
+    }
+}
+
+void Connection::send(Buffer *buf)
+{
+    if(_connState == D_CONNECTED)
+    {
+        if(_loop->isInLoopThread())
+        {
+            sendInLoop(buf->retrieveAsString());
+        }
+        else
+        {
+            _loop->runInLoopThread(
+                    std::bind(&Connection::sendInLoop, this, buf->retrieveAsString()));
         }
     }
 }

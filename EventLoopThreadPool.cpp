@@ -10,9 +10,9 @@ EventLoopThreadPool::EventLoopThreadPool(EventLoop *mainLoop, int numThreads)
           _started(false),
           _next(0)
 {
-    if(numThreads <= 0)
+    if(numThreads < 0)
     {
-        std::cout<<"_numThreads <= 0"<<std::endl;
+        std::cout<<"_numThreads < 0"<<std::endl;
         abort();
     }
 }

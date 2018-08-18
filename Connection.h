@@ -79,6 +79,7 @@ public:
 
     //发送数据，线程安全的
     void send(const std::string& message);
+    void send(Buffer* buf);
 
     //线程安全的
     void shutdown();

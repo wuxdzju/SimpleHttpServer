@@ -68,16 +68,16 @@ public:
     //一次读取n字节数据之后，更新_readerIndex的位置
     void retrieve(size_t len)
     {
-        assert(len<=_readerIndex);
-        _readerIndex+=len;
+        assert(len <= readableBytes());
+        _readerIndex += len;
     }
 
     //一直读到end前一个位置，更新_readerIndex的位置
     void retrieveUntil(const char* end)
     {
-        assert(peek()<=end);
-        assert(end<=beginWrite());
-        retrieve(end-peek());
+        assert(peek() <= end);
+        assert(end <= beginWrite());
+        retrieve(end - peek());
     }
 
     //读取所有的数据后，更新_readerIndex和_writerIndex
@@ -98,7 +98,7 @@ public:
     //更新_writeIndex的下标
     void hasWritten(size_t len)
     {
-        _writerIndex+len;
+        _writerIndex += len;
     }
 
     //确保有len的空间可以写

@@ -52,7 +52,8 @@ void HttpServer::OnMessage(const ConnectionPtr &conn,
     if(!httpTask->parseRequest(buf,receiveTime))
     {
         conn->send("HTTP/1.1 400 Bad Request\r\n\r\n");
-        conn->shutdown();
+        //conn->shutdown();
+        conn->forceClose();
     }
 
     if(httpTask->isCheckDone())
@@ -72,4 +73,9 @@ void HttpServer::OnRequest(const ConnectionPtr& conn,
     _httpCallBack(request, &response);
     Buffer buf;
     response.appendToBuffer(&buf);
+    conn->send(&buf);
+    if(response.closeConnection())
+    {
+        conn->shutdown();
+    }
 }

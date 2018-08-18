@@ -26,7 +26,7 @@ bool HttpTask::processRequestLine(const char *begin, const char *end)
             }
 
             start =space + 1;
-            succeed == (end - start == 8 && std::equal(start, end-1, "HTTP/1."));
+            succeed = (end - start == 8 && std::equal(start, end-1, "HTTP/1."));
             if(succeed)
             {
                if(*(end-1) == '1')
@@ -89,10 +89,10 @@ bool HttpTask::parseRequest(Buffer *buffer, TimeUnit receiveTime)
                 else
                 {
                     //空行：只包含crlf,代表header的结束
-                    _checkState == D_CHECK_DONE;
+                    _checkState = D_CHECK_DONE;
                     hasMore = false;
                 }
-                buffer->retrieveUntil(crlf);
+                buffer->retrieveUntil(crlf + 2);
             }
             else
             {

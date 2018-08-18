@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
+      <config projectName="stress_client" targetName="stress_client" />
       <config projectName="wHttpServer" targetName="wHttpServer" />
       <config projectName="doker" targetName="doker" />
       <config projectName="sumer" targetName="sumer" />
@@ -14,11 +15,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eb06008-78d0-4fb7-90c9-61cb557994bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/stress_client.dir/test/stress_client.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/stress_client.dir/test/stress_client.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Buffer.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Buffer.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Connection.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Connection.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/EventLoop.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/EventLoop.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/EventLoopThreadPool.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpResponse.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpResponse.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpServer.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpServer.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpTask.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/HttpTask.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Server.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/Server.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/main.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/sumer.dir/main.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/stress_client" afterPath="$PROJECT_DIR$/build/stress_client" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sumer" afterPath="$PROJECT_DIR$/build/sumer" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wHttpServer.iml" afterPath="$PROJECT_DIR$/.idea/wHttpServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Buffer.h" afterPath="$PROJECT_DIR$/Buffer.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Connection.cpp" afterPath="$PROJECT_DIR$/Connection.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Connection.h" afterPath="$PROJECT_DIR$/Connection.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventLoop.cpp" afterPath="$PROJECT_DIR$/EventLoop.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventLoopThreadPool.cpp" afterPath="$PROJECT_DIR$/EventLoopThreadPool.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HttpServer.cpp" afterPath="$PROJECT_DIR$/HttpServer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HttpTask.cpp" afterPath="$PROJECT_DIR$/HttpTask.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server.cpp" afterPath="$PROJECT_DIR$/Server.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base/TimeUnit.h" afterPath="$PROJECT_DIR$/base/TimeUnit.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.cpp" afterPath="$PROJECT_DIR$/test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CMakeLists.txt" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.cpp" afterPath="$PROJECT_DIR$/test/test.cpp" />
     </list>
     <ignored path="wHttpServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,51 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Timer.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Timer.h">
+      <file leaf-file-name="HttpServer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HttpServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeUnit.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base/TimeUnit.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="66" column="56" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimerQueue.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TimerQueue.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="117" column="22" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="22" />
+            <state relative-caret-position="201">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -90,57 +72,97 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimerQueue.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TimerQueue.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding>
-                <element signature="e#206#235#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.cpp">
+      <file leaf-file-name="Buffer.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buffer.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
-              <caret line="537" column="7" selection-start-line="537" selection-start-column="7" selection-end-line="537" selection-end-column="7" />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Connection.h">
+      <file leaf-file-name="Server.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            <state relative-caret-position="198">
+              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Connection.cpp">
+      <file leaf-file-name="functional" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/5/functional">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="236" column="87" selection-start-line="236" selection-start-column="87" selection-end-line="236" selection-end-column="87" />
+            <state relative-caret-position="183">
+              <caret line="2267" column="0" selection-start-line="2267" selection-start-column="0" selection-end-line="2267" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Channel.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Channel.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventLoop.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventLoop.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeUnit.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base/TimeUnit.cpp">
+      <file leaf-file-name="HttpTask.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HttpTask.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1620">
+              <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stress_client.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/stress_client.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Connection.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/error.cpp" />
-        <option value="$PROJECT_DIR$/reader.h" />
         <option value="$PROJECT_DIR$/reader.cpp" />
         <option value="$PROJECT_DIR$/epoll.h" />
         <option value="$PROJECT_DIR$/myerr.h" />
@@ -179,32 +199,34 @@
         <option value="$PROJECT_DIR$/HTTPRequest.h" />
         <option value="$PROJECT_DIR$/HttpTast.h" />
         <option value="$PROJECT_DIR$/Buffer.cpp" />
-        <option value="$PROJECT_DIR$/Buffer.h" />
-        <option value="$PROJECT_DIR$/HttpRequest.cpp" />
-        <option value="$PROJECT_DIR$/HttpTask.cpp" />
         <option value="$PROJECT_DIR$/HttpResponse.cpp" />
         <option value="$PROJECT_DIR$/HttpServer.h" />
-        <option value="$PROJECT_DIR$/test/test.cpp" />
-        <option value="$PROJECT_DIR$/HttpRequest.h" />
         <option value="$PROJECT_DIR$/HttpTask.h" />
         <option value="$PROJECT_DIR$/HttpResponse.h" />
-        <option value="$PROJECT_DIR$/HttpServer.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Server.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/EventLoopThreadPool.cpp" />
         <option value="$PROJECT_DIR$/EventLoopThreadPool.h" />
         <option value="$PROJECT_DIR$/EventLoop.h" />
         <option value="$PROJECT_DIR$/base/WeakCallback.h" />
         <option value="$PROJECT_DIR$/TimerManager.h" />
-        <option value="$PROJECT_DIR$/EventLoop.cpp" />
         <option value="$PROJECT_DIR$/TimerQueue.h" />
         <option value="$PROJECT_DIR$/TimerQueue.cpp" />
         <option value="$PROJECT_DIR$/test.cpp" />
-        <option value="$PROJECT_DIR$/Server.cpp" />
-        <option value="$PROJECT_DIR$/Connection.h" />
         <option value="$PROJECT_DIR$/base/TimeUnit.h" />
+        <option value="$PROJECT_DIR$/test/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/test/test.cpp" />
+        <option value="$PROJECT_DIR$/HttpRequest.h" />
+        <option value="$PROJECT_DIR$/EventLoop.cpp" />
+        <option value="$PROJECT_DIR$/HttpRequest.cpp" />
+        <option value="$PROJECT_DIR$/Connection.h" />
         <option value="$PROJECT_DIR$/Connection.cpp" />
+        <option value="$PROJECT_DIR$/HttpServer.cpp" />
+        <option value="$PROJECT_DIR$/Buffer.h" />
+        <option value="$PROJECT_DIR$/EventLoopThreadPool.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/HttpTask.cpp" />
+        <option value="$PROJECT_DIR$/test/stress_client.cpp" />
+        <option value="$PROJECT_DIR$/Server.cpp" />
       </list>
     </option>
   </component>
@@ -301,11 +323,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/old version/CMakeLists.txt" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/example" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Application.sumer">
@@ -474,7 +498,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="wHttpServer" TARGET_NAME="wHttpServer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="wHttpServer" RUN_TARGET_NAME="wHttpServer">
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
       <method />
     </configuration>
@@ -482,15 +506,20 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="sumer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sumer" TARGET_NAME="sumer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sumer" RUN_TARGET_NAME="sumer">
+    <configuration default="false" name="stress_client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stress_client" TARGET_NAME="stress_client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stress_client" RUN_TARGET_NAME="stress_client">
       <envs />
       <method />
     </configuration>
-    <list size="4">
+    <configuration default="false" name="sumer" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stress_client" RUN_TARGET_NAME="sumer" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.wHttpServer" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="2" class="java.lang.String" itemvalue="Application.doker" />
-      <item index="3" class="java.lang.String" itemvalue="Application.sumer" />
+      <item index="3" class="java.lang.String" itemvalue="Application.stress_client" />
+      <item index="4" class="java.lang.String" itemvalue="Application.sumer" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -526,12 +555,14 @@
       <workItem from="1534298262079" duration="1981000" />
       <workItem from="1534343652022" duration="2019000" />
       <workItem from="1534386231067" duration="9220000" />
-      <workItem from="1534412226668" duration="8175000" />
+      <workItem from="1534412226668" duration="8634000" />
+      <workItem from="1534493503636" duration="12444000" />
+      <workItem from="1534557239211" duration="12811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186239000" />
+    <option name="totallyTimeSpent" value="211953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -539,11 +570,11 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12540895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -572,84 +603,70 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/test.cpp</url>
+          <url>file://$PROJECT_DIR$/test/test.cpp</url>
           <line>519</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Connection.cpp</url>
-          <line>216</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Connection.cpp</url>
-          <line>229</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/TimerQueue.cpp</url>
           <line>197</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connection.cpp</url>
+          <line>114</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connection.cpp</url>
+          <line>260</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connection.cpp</url>
+          <line>82</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connection.cpp</url>
+          <line>39</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connection.cpp</url>
+          <line>101</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Server.cpp</url>
+          <line>93</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Server.cpp</url>
+          <line>99</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/HttpServer.cpp</url>
+          <line>50</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/HttpTask.cpp</url>
+          <line>52</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="53" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HttpTast.h" />
-    <entry file="file://$PROJECT_DIR$/example/HttpRequest.h" />
-    <entry file="file://$PROJECT_DIR$/example/HttpResponse.cc" />
-    <entry file="file://$PROJECT_DIR$/old version/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/HttpContext.h" />
-    <entry file="file://$PROJECT_DIR$/Acceptor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InetAddr.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old version/http_tast.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old version/http_tast.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Buffer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Buffer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <element signature="e#35#52#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,60 +677,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpResponse.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpTask.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpRequest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/HttpServer_test.cc" />
-    <entry file="file://$PROJECT_DIR$/HttpRequest.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="138" column="9" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpTask.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpResponse.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EventLoopThread.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -731,37 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EventLoopThreadPool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventLoopThreadPool.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpServer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpServer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Poller.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -774,27 +711,6 @@
         <state relative-caret-position="342">
           <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SocketHand.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="161" column="17" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Socket.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -835,43 +751,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Channel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/functional">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="1828" column="0" selection-start-line="1828" selection-start-column="0" selection-end-line="1828" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventLoop.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TimerManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TimerQueue.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
+        <state relative-caret-position="1386">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#206#235#0" expanded="true" />
@@ -881,7 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TimerQueue.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="2106">
           <caret line="117" column="22" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -891,69 +780,284 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Timer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="774">
           <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="537" column="7" selection-start-line="537" selection-start-column="7" selection-end-line="537" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base/TimeUnit.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base/TimeUnit.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
+        <state relative-caret-position="1188">
           <caret line="66" column="56" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old version/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpResponse.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpRequest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="151" column="9" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Socket.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocketHand.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Poller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Acceptor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpServer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Connection.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        <state relative-caret-position="352">
+          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpResponse.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/shared_ptr_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="659" column="0" selection-start-line="659" selection-start-column="0" selection-end-line="659" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_construct.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="424" column="0" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpRequest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventLoopThreadPool.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventLoopThreadPool.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpTask.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/functional">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="2267" column="0" selection-start-line="2267" selection-start-column="0" selection-end-line="2267" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Channel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventLoop.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Connection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="236" column="87" selection-start-line="236" selection-start-column="87" selection-end-line="236" selection-end-column="87" />
+        <state relative-caret-position="345">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buffer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/stress_client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpTask.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpServer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

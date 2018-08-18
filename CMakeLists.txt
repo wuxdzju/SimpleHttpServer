@@ -51,10 +51,16 @@ set(SOURCE_FILES main.cpp
         HttpServer.cpp
         EventLoopThreadPool.h
         EventLoopThreadPool.cpp
-        test.cpp
+        test/test.cpp
         )
 
 add_executable(sumer ${SOURCE_FILES})
 
 find_package(Threads REQUIRED)
 target_link_libraries(sumer  Threads::Threads)
+
+#stess_client
+project(stress_client)
+
+add_executable(stress_client test/stress_client.cpp)
+
