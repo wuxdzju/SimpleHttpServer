@@ -67,4 +67,10 @@ inline TimeUnit addTime(TimeUnit timeUnit, double seconds)
     return TimeUnit(timeUnit.microSecondsSinceEpoch() + delta);
 }
 
+inline double timeDifference(TimeUnit hi,TimeUnit lo)
+{
+    int64_t diff = hi.microSecondsSinceEpoch() - lo.microSecondsSinceEpoch();
+    return static_cast<double >(diff);
+}
+
 #endif

@@ -2,6 +2,7 @@
 #include "Acceptor.h"
 #include "EventLoop.h"
 #include "EventLoopThreadPool.h"
+#include "Connection.h"
 
 #include <memory>
 #include <functional>
@@ -9,7 +10,7 @@
 using std::placeholders::_1;
 using std::placeholders::_2;
 
-extern const int timeOutSeconds = 8;//超时时间8s，连接8秒没input的话，则关闭连接
+
 
  Server::Server(EventLoop *loop, const InetAddr &listenAddr)
          :_loop(loop),
@@ -51,11 +52,11 @@ void Server::start()
     }
 }
 
-//void timeouttest()
-//{
-//    std::cout<<"timeout"<<std::endl;
-//
-//}
+void timeouttest()
+{
+    std::cout<<"timeout"<<std::endl;
+
+}
 
 //newConnection会创建Connection对象conn，把它加入到connectionMap中，设置好回调函数
 //NewConnection函数由_acceptor回调
@@ -85,8 +86,6 @@ void Server::newConnection(int sockfd, const InetAddr &peerAddr)
     ioLoop->runInLoopThread(
             std::bind(&Connection::ConnectEstablished,conn));
 
-    //ioLoop->runAfter(timeOutSeconds,timeouttest);
-    //conn->forceCloseWithDelay(timeOutSeconds);
 }
 
 void Server::removeConnection(const ConnectionPtr &conn)

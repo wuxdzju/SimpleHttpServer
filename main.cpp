@@ -3,15 +3,19 @@
 #include "HttpRequest.h"
 #include "HttpResponse.h"
 
+
 #include <iostream>
 #include <map>
 #include <string>
 
 extern char favicon[555];
 
+EventLoop* g_loop = nullptr;
+HttpServer* myserver = nullptr;
+
 void OnRequest(const HttpRequest& request, HttpResponse* response)
 {
-    std::cout<< "Headers "<<request.methodToString()<<" "<<request.getUrl()<<std::endl;
+    //std::cout<< "Headers "<<request.methodToString()<<" "<<request.getUrl()<<std::endl;
     const std::map<std::string,std::string>& headers=request.getHeaderMap();
     for(std::map<std::string,std::string>::const_iterator it = headers.begin();
         it != headers.end();
@@ -47,6 +51,7 @@ void OnRequest(const HttpRequest& request, HttpResponse* response)
         response->setBody("Hello World");
     }
     else
+
     {
         response->setStatusCode(HttpResponse::D_404_NOT_FOUND);
         response->setStatusMessage("Not Found");
@@ -57,8 +62,11 @@ void OnRequest(const HttpRequest& request, HttpResponse* response)
 
 int main(int argc, char* argv[])
 {
+    printf("main(): tid = %d\n",CurrentThread::tid());
     EventLoop loop;
-    HttpServer httpServer(&loop,InetAddr(9982));
+    g_loop = &loop;
+    HttpServer httpServer(&loop,InetAddr(9981));
+    myserver = &httpServer;
     httpServer.setHttpCallBack(OnRequest);
     httpServer.start();
     loop.loop();

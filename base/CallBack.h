@@ -3,6 +3,7 @@
 
 #include <functional>
 #include <memory>
+#include <list>
 
 class Buffer;
 class Connection;
@@ -17,5 +18,9 @@ typedef std::function<void( const ConnectionPtr&)> ConnectionCallBack;
 typedef std::function<void(const ConnectionPtr&,Buffer*,TimeUnit)> MessageCallBack;
 
 typedef std::function<void(const ConnectionPtr&)> CloseCallBack;
+
+typedef std::weak_ptr<Connection> WeakConnectionPtr;
+typedef std::list<WeakConnectionPtr> WeakConnectionList;
+
 
 #endif

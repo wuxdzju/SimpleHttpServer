@@ -48,12 +48,12 @@ public:
 
     void setConnectionCallback(const ConnectionCallBack& cb)
     {
-        _connectionCallback=cb;
+        _connectionCallback = cb;
     }
 
     void setMessageCallback(const MessageCallBack& cb)
     {
-        _messageCallback=cb;
+        _messageCallback = cb;
     }
 
     void setCloseCallback(const CloseCallBack& cb)
@@ -69,6 +69,16 @@ public:
     HttpTask* getHttpTask()
     {
         return &_httpTask;
+    }
+
+    void setWeakConnectionListPosition(WeakConnectionList::iterator it)
+    {
+        _weakConnectionListPosiion = it;
+    }
+
+    WeakConnectionList::iterator getWeakConnectionListPosition() const
+    {
+        return _weakConnectionListPosiion;
     }
 
     //在Server中调用，当Server接受一个新连接时调用，并且只调用一次
@@ -98,7 +108,7 @@ private:
     };
 
     void setConnState(ConnectionState s){
-        _connState=s;
+        _connState = s;
     }
 
     void handRead(TimeUnit recieveTime);
@@ -110,7 +120,7 @@ private:
     void shutdownInLoop();
     void forceCloseInLoop();
 
-    bool canDeleted() const ;
+    //bool canDeleted() const ;
 
 
     EventLoop *_loop;
@@ -129,6 +139,7 @@ private:
 
     HttpTask _httpTask;
 
+    WeakConnectionList::iterator _weakConnectionListPosiion;
 
     ConnectionCallBack _connectionCallback;//连接刚建立好之后的调用的回调函数
     MessageCallBack _messageCallback;//收到数据（即read到数据）之后调用的回调函数

@@ -174,9 +174,9 @@ std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeUnit now) {
     std::vector<Entry> expired;
     expired.clear();
     //Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(reinterpret_cast<Timer*>(UINTPTR_MAX)));//因为shared_ptr对象析构时，要free所保存的指针，故这里不能用UINTPTR_MAX，因为这是一个非法地址
-    Entry sentry=std::make_pair(now, std::shared_ptr<Timer>(nullptr));
+    Entry sentry=std::make_pair(addTime(TimeUnit::now(),0.01), std::shared_ptr<Timer>(nullptr));
     TimerList::iterator it=_timers.lower_bound(sentry);
-    assert(it==_timers.end() || now<it->first);
+    assert(it == _timers.end() || now < it->first);
     for(TimerList::iterator iter=_timers.begin(); iter != it; iter++)
     {
         expired.push_back(*iter);

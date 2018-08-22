@@ -10,7 +10,8 @@
 #include <arpa/inet.h>
 #include <string.h>
 
-static const char* request = "GET / HTTP/1.1\r\nConnection: keep-alive\r\n\r\n";
+//static const char* request = "GET / HTTP/1.1\r\nConnection: keep-alive\r\n\r\n";
+static const char* request = "GET / HTTP/1.1\r\n\r\n";
 
 int setnonblocking( int fd )
 {
@@ -112,14 +113,16 @@ int main( int argc, char* argv[] )
     start_conn( epoll_fd, atoi( argv[ 3 ] ), argv[1], atoi( argv[2] ) );
     epoll_event events[ 10000 ];
     char buffer[ 2048 ];
-    while ( 1 )
+    //int cnt = 0;
+    while (true )
     {
+        //cnt++;
         int fds = epoll_wait( epoll_fd, events, 10000, 2000 );
         for ( int i = 0; i < fds; i++ )
-        {   
+        {
             int sockfd = events[i].data.fd;
             if ( events[i].events & EPOLLIN )
-            {   
+            {
                 if ( ! read_once( sockfd, buffer, 2048 ) )
                 {
                     close_conn( epoll_fd, sockfd );
@@ -129,7 +132,7 @@ int main( int argc, char* argv[] )
                 event.data.fd = sockfd;
                 epoll_ctl( epoll_fd, EPOLL_CTL_MOD, sockfd, &event );
             }
-            else if( events[i].events & EPOLLOUT ) 
+            else if( events[i].events & EPOLLOUT )
             {
                 if ( ! write_nbytes( sockfd, request, strlen( request ) ) )
                 {
