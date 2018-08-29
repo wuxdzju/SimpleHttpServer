@@ -54,8 +54,9 @@ void HttpServer::OnConnection(const ConnectionPtr &conn)
         conn->setHttpTask(HttpTask());
 
         conn->setLastActiveTime(TimeUnit::now());
-        _connectionList.push_back(conn);
-        conn->setWeakConnectionListPosition(--_connectionList.end());
+        addConnList(conn);
+//        _connectionList.push_back(conn);
+//        conn->setWeakConnectionListPosition(--_connectionList.end());
         printf("OnConnection(): tid=%d new connection [%s] from %s\n",
                CurrentThread::tid(),
                conn->getName().c_str(),
@@ -67,7 +68,8 @@ void HttpServer::OnConnection(const ConnectionPtr &conn)
     }
     else
     {
-        _connectionList.erase(conn->getWeakConnectionListPosition());
+        //_connectionList.erase(conn->getWeakConnectionListPosition());
+        eraseConnList(conn);
     }
 }
 
@@ -75,15 +77,12 @@ void HttpServer::OnMessage(const ConnectionPtr &conn,
                            Buffer *buf,
                            TimeUnit receiveTime)
 {
-//    EventLoop* ioLoop = conn->getLoop();
-//    ioLoop->runInLoopThread(
-//            std::bind(&Connection::setLastActiveTime,conn,receiveTime));
-//    ioLoop->runInLoopThread(
-//            std::bind(&Connection::forceCloseWithDelay,conn,timeOutSeconds));
+   // std::bind(&Connection::forceCloseWithDelay,conn,timeOutSeconds));
 
     conn->setLastActiveTime(receiveTime);
-    _connectionList.splice(_connectionList.end(),_connectionList,conn->getWeakConnectionListPosition());
-    assert(--_connectionList.end() == conn->getWeakConnectionListPosition());
+    modifyConnList(conn);
+//    _connectionList.splice(_connectionList.end(),_connectionList,conn->getWeakConnectionListPosition());
+//    assert(--_connectionList.end() == conn->getWeakConnectionListPosition());
 
     HttpTask* httpTask = conn->getHttpTask();
     if(!httpTask->parseRequest(buf,receiveTime))
@@ -155,12 +154,34 @@ void HttpServer::OnTimer()
 void HttpServer::addConnList(const ConnectionPtr &conn)
 {
     EventLoop* loop = _server.getLoop();
-    loop->runInLoopThread(std::bind(&HttpServer::addConnListInLoop,this,conn));
+    loop->runInLoopThread(std::bind(&HttpServer::addConnListInLoop, this, conn));
 }
 
 void HttpServer::addConnListInLoop(const ConnectionPtr &conn)
 {
+    _connectionList.push_back(conn);
+    conn->setWeakConnectionListPosition(--_connectionList.end());
+}
 
+void HttpServer::eraseConnList(const ConnectionPtr &conn)
+{
+    EventLoop* loop = _server.getLoop();
+    loop->runInLoopThread(std::bind(&HttpServer::eraseConnListInLoop, this, conn));
+}
+
+void HttpServer::eraseConnListInLoop(const ConnectionPtr &conn)
+{
+    _connectionList.erase(conn->getWeakConnectionListPosition());
+}
+
+void HttpServer::modifyConnList(const ConnectionPtr &conn)
+{
+    EventLoop* loop = _server.getLoop();
+    loop->runInLoopThread(std::bind(&HttpServer::modifyConnListInLoop, this, conn));
+}
+
+void HttpServer::modifyConnListInLoop(const ConnectionPtr &conn)
+{
     _connectionList.splice(_connectionList.end(),_connectionList,conn->getWeakConnectionListPosition());
     assert(--_connectionList.end() == conn->getWeakConnectionListPosition());
 }

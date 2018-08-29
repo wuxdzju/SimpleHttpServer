@@ -35,6 +35,8 @@ public:
     void OnTimer();
 
     void addConnList(const ConnectionPtr& conn);
+    void eraseConnList(const ConnectionPtr& conn);
+    void modifyConnList(const ConnectionPtr& conn);
 
 private:
     void OnConnection(const ConnectionPtr& conn);
@@ -42,6 +44,8 @@ private:
     void OnRequest(const ConnectionPtr& conn, const HttpRequest&);
 
     void addConnListInLoop(const ConnectionPtr& conn);
+    void eraseConnListInLoop(const ConnectionPtr& conn);
+    void modifyConnListInLoop(const ConnectionPtr& conn);
 
     Server _server;
     HttpCallBack _httpCallBack;
