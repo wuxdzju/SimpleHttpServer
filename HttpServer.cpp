@@ -12,8 +12,7 @@ using std::placeholders::_3;
 
 extern const int timeOutSeconds = 8;//超时时间8s，连接8秒没input的话，则关闭连接
 
-extern EventLoop* g_loop;
-extern HttpServer* myserver;
+
 
 void defaultHttpCallBack(const HttpRequest&, HttpResponse* response)
 {
@@ -156,7 +155,7 @@ void HttpServer::OnTimer()
 void HttpServer::addConnList(const ConnectionPtr &conn)
 {
     EventLoop* loop = _server.getLoop();
-    loop->runInLoopThread(std::bind(&HttpServer::addConnListInLoop,,))
+    loop->runInLoopThread(std::bind(&HttpServer::addConnListInLoop,this,conn));
 }
 
 void HttpServer::addConnListInLoop(const ConnectionPtr &conn)

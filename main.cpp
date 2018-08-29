@@ -10,8 +10,8 @@
 
 extern char favicon[555];
 
-EventLoop* g_loop = nullptr;
-HttpServer* myserver = nullptr;
+//EventLoop* g_loop = nullptr;
+//HttpServer* myserver = nullptr;
 
 void OnRequest(const HttpRequest& request, HttpResponse* response)
 {
@@ -64,9 +64,7 @@ int main(int argc, char* argv[])
 {
     printf("main(): tid = %d\n",CurrentThread::tid());
     EventLoop loop;
-    g_loop = &loop;
-    HttpServer httpServer(&loop,InetAddr(9981));
-    myserver = &httpServer;
+    HttpServer httpServer(&loop,InetAddr(9982));
     httpServer.setHttpCallBack(OnRequest);
     httpServer.start();
     loop.loop();
