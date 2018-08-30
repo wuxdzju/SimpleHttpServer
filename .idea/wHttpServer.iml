@@ -2,55 +2,55 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/Buffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Buffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Acceptor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Connection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoopThread.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoopThreadPool.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpTask.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoop.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpServer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Poller.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Socket.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Channel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpServer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/TimerQueue.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/SocketHand.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpResponse.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoopThread.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpRequest.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Timer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoop.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Poller.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpRequest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Connection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Server.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/InetAddr.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/MutexLock.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/TimeUnit.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/Thread.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/CurrentThread.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/noncopyable.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/Thread.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/base/TimeUnit.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/EventLoopThreadPool.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/TimerQueue.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/InetAddr.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpResponse.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Server.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Acceptor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Channel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/SocketHand.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/HttpTask.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Socket.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/TimerManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/stress_client.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/echo.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/echo.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Buffer.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Buffer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Connection.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SocketHand.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoopThread.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpTask.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoop.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpServer.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Acceptor.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoopThreadPool.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Poller.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Channel.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpServer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TimerQueue.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpRequest.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SocketHand.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpResponse.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoopThread.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpRequest.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Timer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoop.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Poller.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Socket.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Acceptor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EventLoopThreadPool.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InetAddr.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/MutexLock.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/TimeUnit.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/Thread.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/CurrentThread.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/noncopyable.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/Thread.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/base/TimeUnit.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Connection.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TimerQueue.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InetAddr.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Server.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Server.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Channel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpResponse.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HttpTask.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Socket.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TimerManager.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

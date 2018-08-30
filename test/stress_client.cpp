@@ -11,7 +11,7 @@
 #include <string.h>
 
 //static const char* request = "GET / HTTP/1.1\r\nConnection: keep-alive\r\n\r\n";
-static const char* request = "GET / HTTP/1.1\r\n\r\n";
+static const char* request = "GET /favicon.ico HTTP/1.1\r\n\r\n";
 
 int setnonblocking( int fd )
 {

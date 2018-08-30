@@ -1,7 +1,7 @@
 #ifndef ECHO_H
 #define ECHO_H
 
-#include "../Server.h"
+#include "../src/Server.h"
 
 
 

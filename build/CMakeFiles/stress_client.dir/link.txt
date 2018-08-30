@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11    CMakeFiles/stress_client.dir/test/stress_client.cpp.o  -o stress_client 

@@ -5,52 +5,52 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
 
 
 
-set(SOURCE_FILES main.cpp
+set(SOURCE_FILES src/main.cpp
         test/echo.h
         test/echo.cpp
-        base/noncopyable.h
-        base/Thread.h
-        base/Thread.cpp
-        base/CurrentThread.h
-        base/TimeUnit.h
-        base/TimeUnit.cpp
-        base/MutexLock.h
-        EventLoop.h
-        EventLoop.cpp
-        Channel.h
-        Channel.cpp
-        Poller.cpp
-        Poller.h
-        Timer.h
-        TimerManager.h
-        TimerQueue.h
-        TimerQueue.cpp
-        EventLoopThread.h
-        EventLoopThread.cpp
-        SocketHand.h
-        SocketHand.cpp
-        Socket.h
-        Socket.cpp
-        InetAddr.h
-        InetAddr.cpp
-        Acceptor.h
-        Acceptor.cpp
-        Connection.h
-        Connection.cpp
-        Server.h
-        Server.cpp
-        Buffer.h
-        Buffer.cpp
-        HttpRequest.h
-        HttpRequest.cpp
-        HttpResponse.h
-        HttpResponse.cpp
-        HttpTask.h
-        HttpTask.cpp
-        HttpServer.h
-        HttpServer.cpp
-        EventLoopThreadPool.h
-        EventLoopThreadPool.cpp
+        src/base/noncopyable.h
+        src/base/Thread.h
+        src/base/Thread.cpp
+        src/base/CurrentThread.h
+        src/base/TimeUnit.h
+        src/base/TimeUnit.cpp
+        src/base/MutexLock.h
+        src/EventLoop.h
+        src/EventLoop.cpp
+        src/Channel.h
+        src/Channel.cpp
+        src/Poller.cpp
+        src/Poller.h
+        src/Timer.h
+        src/TimerManager.h
+        src/TimerQueue.h
+        src/TimerQueue.cpp
+        src/EventLoopThread.h
+        src/EventLoopThread.cpp
+        src/SocketHand.h
+        src/SocketHand.cpp
+        src/Socket.h
+        src/Socket.cpp
+        src/InetAddr.h
+        src/InetAddr.cpp
+        src/Acceptor.h
+        src/Acceptor.cpp
+        src/Connection.h
+        src/Connection.cpp
+        src/Server.h
+        src/Server.cpp
+        src/Buffer.h
+        src/Buffer.cpp
+        src/HttpRequest.h
+        src/HttpRequest.cpp
+        src/HttpResponse.h
+        src/HttpResponse.cpp
+        src/HttpTask.h
+        src/HttpTask.cpp
+        src/HttpServer.h
+        src/HttpServer.cpp
+        src/EventLoopThreadPool.h
+        src/EventLoopThreadPool.cpp
         test/test.cpp
         )
 
