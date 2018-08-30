@@ -15,7 +15,7 @@ class EventLoopThreadPool;
 class Server:noncopyable
 {
 public:
-    Server(EventLoop* loop,const InetAddr& listenAddr);
+    Server(EventLoop* loop, const InetAddr& listenAddr, int threadNum);
 
     ~Server();
 

@@ -9,7 +9,7 @@ using std::placeholders::_3;
 
 EchoServer::EchoServer(EventLoop *loop, const InetAddr &listenAddr)
         :_loop(loop),
-         _server(loop,listenAddr)
+         _server(loop,listenAddr, 4)
 {
     _server.setConnectionCallBack(std::bind(&EchoServer::OnConnection,this,_1));
     _server.setMessageCallBack(std::bind(&EchoServer::OnMessage,this,_1,_2,_3));

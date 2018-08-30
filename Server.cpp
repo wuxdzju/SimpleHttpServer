@@ -12,11 +12,11 @@ using std::placeholders::_2;
 
 
 
- Server::Server(EventLoop *loop, const InetAddr &listenAddr)
+ Server::Server(EventLoop *loop, const InetAddr &listenAddr, int threadNum)
          :_loop(loop),
           _name(listenAddr.toHostPort()),
           _acceptor(new Acceptor(loop,listenAddr)),
-          _threadpool(new EventLoopThreadPool(loop, 4)),
+          _threadpool(new EventLoopThreadPool(loop, threadNum)),
           _started(false),
           _nextConnId(1)
  {

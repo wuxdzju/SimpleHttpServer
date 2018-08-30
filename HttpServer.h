@@ -16,7 +16,7 @@ public:
 
 
 
-    HttpServer(EventLoop* loop, const InetAddr& listenAddr, int idleSeconds = 8);
+    HttpServer(EventLoop* loop, const InetAddr& listenAddr, int threadNum, int idleSeconds = 8);
 
     ~HttpServer();
 

@@ -10,19 +10,16 @@
 
 extern char favicon[555];
 
-//EventLoop* g_loop = nullptr;
-//HttpServer* myserver = nullptr;
 
 void OnRequest(const HttpRequest& request, HttpResponse* response)
 {
-    //std::cout<< "Headers "<<request.methodToString()<<" "<<request.getUrl()<<std::endl;
     const std::map<std::string,std::string>& headers=request.getHeaderMap();
-    for(std::map<std::string,std::string>::const_iterator it = headers.begin();
-        it != headers.end();
-        ++it)
-    {
-        std::cout<<it->first<<": "<<it->second<<std::endl;
-    }
+//    for(std::map<std::string,std::string>::const_iterator it = headers.begin();
+//        it != headers.end();
+//        ++it)
+//    {
+//        std::cout<<it->first<<": "<<it->second<<std::endl;
+//    }
 
     if(request.getUrl() == "/")
     {
@@ -62,9 +59,29 @@ void OnRequest(const HttpRequest& request, HttpResponse* response)
 
 int main(int argc, char* argv[])
 {
-    printf("main(): tid = %d\n",CurrentThread::tid());
+    //printf("main(): tid = %d\n",CurrentThread::tid());
+    int port = 9981;
+    int threadNum = 4;
+
+    int opt;
+    const char* str = "t:p:";
+    while((opt = getopt(argc, argv, str)) != -1)
+    {
+        switch (opt)
+        {
+            case 't':
+                threadNum = atoi(optarg);
+                break;
+            case 'p':
+                port = atoi(optarg);
+                break;
+            default:
+                break;
+        }
+    }
+
     EventLoop loop;
-    HttpServer httpServer(&loop,InetAddr(9982));
+    HttpServer httpServer(&loop,InetAddr(port),threadNum);
     httpServer.setHttpCallBack(OnRequest);
     httpServer.start();
     loop.loop();

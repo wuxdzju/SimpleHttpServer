@@ -23,8 +23,9 @@ void defaultHttpCallBack(const HttpRequest&, HttpResponse* response)
 
 HttpServer::HttpServer(EventLoop *loop,
                        const InetAddr &listenAddr,
+                       int threadNum,
                        int idleSeconds)
-        : _server(loop,listenAddr),
+        : _server(loop, listenAddr, threadNum),
           _httpCallBack(defaultHttpCallBack),
           _idleSeconds(idleSeconds)
 {
@@ -62,9 +63,6 @@ void HttpServer::OnConnection(const ConnectionPtr &conn)
                conn->getName().c_str(),
                conn->getPeerAddr().toHostPort().c_str());
 
-//        EventLoop* ioLoop = conn->getLoop();
-//        ioLoop->runInLoopThread(
-//            std::bind(&Connection::forceCloseWithDelay,conn,timeOutSeconds));
     }
     else
     {

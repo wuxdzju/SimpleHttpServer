@@ -374,7 +374,7 @@ void test_connection2()
     InetAddr listenAddr(9982);
     EventLoop loop;
 
-    Server server(&loop,listenAddr);
+    Server server(&loop,listenAddr,0);
     server.setConnectionCallBack(OnConnection);
     server.setMessageCallBack(OnMessage2);
     server.start();
@@ -418,7 +418,7 @@ void test10()
     InetAddr listenAddr(9983);
     EventLoop loop;
 
-    Server server(&loop,listenAddr);
+    Server server(&loop,listenAddr,0);
     server.setConnectionCallBack(onConnection2);
     server.setMessageCallBack(OnMessage2);
     server.start();
@@ -449,7 +449,7 @@ void test_echo2()
     printf("main():tid= %d\n",CurrentThread::tid());
     EventLoop loop;
     InetAddr listenAddr(9982);
-    Server server(&loop,listenAddr);
+    Server server(&loop,listenAddr,0);
     server.setConnectionCallBack(OnConnectionEcho);
     server.setMessageCallBack(OnMessageEcho);
     server.start();
@@ -535,7 +535,7 @@ void testThreadPool()
     InetAddr listenAddr(9981);
     EventLoop loop;
 
-    Server server(&loop,listenAddr);
+    Server server(&loop,listenAddr,0);
     server.setMessageCallBack(OnMessageThreadPool);
     server.setConnectionCallBack(OnConnectionThreadPool);
     server.setThreadNum(4);
