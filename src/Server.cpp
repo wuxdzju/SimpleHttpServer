@@ -52,11 +52,6 @@ void Server::start()
     }
 }
 
-void timeouttest()
-{
-    std::cout<<"timeout"<<std::endl;
-
-}
 
 //newConnection会创建Connection对象conn，把它加入到connectionMap中，设置好回调函数
 //NewConnection函数由_acceptor回调

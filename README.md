@@ -5,7 +5,7 @@ sumer WebServer
 
 | Part Ⅰ | Part Ⅱ | Part Ⅲ | Part Ⅳ | Part Ⅴ |
 | :--------: | :---------: | :---------: | :---------: | :---------: |
-| [项目目的]()|[并发模型]()|[核心结构]() | [测试及改进]() | [遇到的困难]()
+| [项目目的]()|[并发模型](https://github.com/wuxdzju/sumer/并发模型.md)|[核心结构]() | [测试及改进]() | [遇到的困难]()
 
 #### Environment
 - 操作系统：Ubuntu 16.04
@@ -26,6 +26,9 @@ make
 
 ./sumer [-t threadNum] [-p  port]
 ```
+
+#### other
+本项主要参考了陈硕老师的muduo网络库
 
 
 
