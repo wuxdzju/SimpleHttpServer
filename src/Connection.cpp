@@ -37,9 +37,9 @@ Connection::Connection(EventLoop *loop,
 
 Connection::~Connection()
 {
-    printf("OnConnection(): tid=%d  connection [%s] is down\n",
-           CurrentThread::tid(),
-           getName().c_str());
+//    printf("OnConnection(): tid=%d  connection [%s] is down\n",
+//           CurrentThread::tid(),
+//           getName().c_str());
     assert(_connState == D_DISCONNECTED);
 }
 
@@ -92,7 +92,7 @@ void Connection::handError()
 {
     //todo 打印错误信息
     _loop->assertInLoopThread();
-    std::cout<<"Connection::handError()["<<_name<<"]"<<std::endl;
+    //std::cout<<"Connection::handError()["<<_name<<"]"<<std::endl;
 }
 
 void Connection::connectionDestroyed()

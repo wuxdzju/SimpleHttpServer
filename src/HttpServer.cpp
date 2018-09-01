@@ -58,10 +58,10 @@ void HttpServer::OnConnection(const ConnectionPtr &conn)
         addConnList(conn);
 //        _connectionList.push_back(conn);
 //        conn->setWeakConnectionListPosition(--_connectionList.end());
-        printf("OnConnection(): tid=%d new connection [%s] from %s\n",
-               CurrentThread::tid(),
-               conn->getName().c_str(),
-               conn->getPeerAddr().toHostPort().c_str());
+//        printf("OnConnection(): tid=%d new connection [%s] from %s\n",
+//               CurrentThread::tid(),
+//               conn->getName().c_str(),
+//               conn->getPeerAddr().toHostPort().c_str());
 
     }
     else
