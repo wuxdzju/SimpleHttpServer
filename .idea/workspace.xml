@@ -14,7 +14,10 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb06008-78d0-4fb7-90c9-61cb557994bd" name="Default" comment="" />
+    <list default="true" id="9eb06008-78d0-4fb7-90c9-61cb557994bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/测试及改进.md" afterPath="$PROJECT_DIR$/测试及改进.md" />
+    </list>
     <ignored path="wHttpServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -522,12 +525,12 @@
       <workItem from="1534687422114" duration="16751000" />
       <workItem from="1535554472343" duration="1871000" />
       <workItem from="1535594862108" duration="8524000" />
-      <workItem from="1535682940395" duration="14882000" />
+      <workItem from="1535682940395" duration="15206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275086000" />
+    <option name="totallyTimeSpent" value="275410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
